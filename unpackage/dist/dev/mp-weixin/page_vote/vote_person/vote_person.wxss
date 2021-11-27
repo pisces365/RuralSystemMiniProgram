@@ -1,0 +1,252 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*  */
+.float-back {
+		float: left;
+		z-index: 100;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(110,110,110,0.6);
+}
+.float-window {
+		position: relative;
+		height: 200rpx;
+		width: 300rpx;
+		padding: 20rpx;
+		background-color: #ffffff;
+		border-radius: 26rpx;
+		margin:0 auto;
+		top: 30%;
+}
+.float-window .close {
+		position: absolute;
+		right: 20rpx;
+}
+.float-window .close:before {
+		content: "\e628";
+}
+.success {
+		text-align: center;
+		margin-top: 60rpx;
+		font-size: 14px;
+		margin-bottom: 40rpx;
+}
+.submit {
+		margin: 0 auto;
+		text-align: center;
+		line-height: 56rpx;
+		width: 120rpx;
+		height: 56rpx;
+		border-radius: 14rpx;
+		font-size: 12px;
+		background-color: #a4adb3;
+		color: white;
+}
+	/*  */
+#page {
+		padding: 50rpx 0;
+		background-color: #fff;
+}
+.detail {
+		display: flex;
+		font-size: 28rpx;
+		margin:0 40rpx;
+		margin-bottom: 40rpx;
+}
+.personal-picture {
+		flex: 2;
+		width: 200rpx;
+		box-shadow: 0 0 20rpx #A6A7A6;
+}
+.main {
+		flex: 3;
+		margin-left: 40rpx;
+}
+.main .personal-item {
+		margin:6px 0;
+}
+.vote {
+		flex: 1;
+		color: #00a3ff;
+		font-weight: bold;
+		font-size: 18px;
+}
+	/*  */
+.more {
+		margin-top: 30rpx;
+		margin:30rpx 40rpx;
+}
+.more .more-title {
+		
+		background-size: contain;
+		background-repeat: no-repeat;
+		font-size: 28rpx;
+		height: 50rpx;
+		/* padding-left: 60rpx; */
+		font-weight: bold;
+		line-height: 50rpx;
+}
+	/* 	.more #brief_introduction {
+		background-image: url(http://p1362.bvimg.com/10465/dd5c3c28123b0e8f.png);
+	}
+	
+	.more #plan {
+		background-image: url(http://p1362.bvimg.com/10465/a50fb8b2ab7e07e1.png);
+	} */
+.more .more-detail {
+		margin-top: 10rpx;
+		font-size: 28rpx;
+		color: #A6A7A6;
+}
+	/*  */
+.null {
+		height: 30rpx;
+}
+.vote-border {
+		display: block;
+		margin: 0 auto;
+		width: 230rpx;
+		
+		padding: 10rpx;
+		
+		border-radius: 20rpx;
+		background-color: #00a3ff;
+}
+.I-Wanna-Vote {
+		
+		background-image: url(http://p1362.bvimg.com/10465/9b6db29fbdd30740.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-size: 50rpx;
+		background-position: 10rpx center;
+		
+		/* font-size: 14px; */
+		height: 60rpx;
+		padding-left: 76rpx;
+		line-height: 70rpx;
+		color: white;
+}
+	
+
