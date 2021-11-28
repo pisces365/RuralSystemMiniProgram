@@ -1,7 +1,7 @@
 export default [{
-		imgUrl: 'https://cdn.zhoukaiwen.com/project1.jpeg',
-		type: '微信公众号/小程序',
-		name: '前后台商城，包含分销、秒杀、拼图、支付、砍价',
+		imgUrl: 'http://p1362.bvimg.com/10465/360f997efd1dd3d8.jpg',
+		type: '养生',
+		name: '如何过好退休生活',
 		time: '2020-12-05',
 		user: [{
 			like: '10',
@@ -11,9 +11,9 @@ export default [{
 		content: ''
 	},
 	{
-		imgUrl: 'https://cdn.zhoukaiwen.com/ybss_jt.png',
-		type: '后台管理系统',
-		name: 'ToG端，一标三实信息管理平台，部分城市已上线',
+		imgUrl: 'http://p1362.bvimg.com/10465/e0c2ab733c489ee0.jpg',
+		type: '书法',
+		name: '书法章法：写好书法的第一课',
 		time: '2020-12-05',
 		user: [{
 			like: '10',

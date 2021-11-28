@@ -9,13 +9,13 @@
 		<add-tip :tip="tip" :duration="duration"/>
 
 		<!-- banner图 -->
-		<view class="uni-padding-wrap">
-			<view class="page-section swiper">
-				<view class="page-section-spacing">
-					<swiper class="swiper" circular="true" indicator-dots="true" autoplay="true" interval="3500" duration="600">
-						<swiper-item class="swiper-list" v-for="(item, index) in bannerList" :key="index">
-							<view class="swiper-item uni-bg-red">
-								<image class="swiper-img" :src="item.imageUrl" mode=""></image>
+		<view class="uni-padding-wrap" style="height: 360rpx;">
+			<view class="page-section swiper" style="height: 360rpx;">
+				<view class="page-section-spacing" style="height: 360rpx;">
+					<swiper class="swiper" style="height: 360rpx;" circular="true" indicator-dots="true" autoplay="true" interval="3500" duration="600">
+						<swiper-item class="swiper-list" style="height: 360rpx;" v-for="(item, index) in bannerList" :key="index">
+							<view class="swiper-item uni-bg-red" style="height: 360rpx;">
+								<image class="swiper-img" :src="item.imageUrl" style="height: 360rpx;" mode=""></image>
 							</view>
 						</swiper-item>
 					</swiper>
@@ -37,12 +37,12 @@
 		</view>
 		<view class="cu-bar bg-white margin-top-xs">
 			<view class="action sub-title">
-				<text class="text-xl text-bold text-blue text-shadow">今日新闻</text>
+				<text class="text-xl text-bold text-blue text-shadow">今日资讯</text>
 				<text class="text-ABC text-blue">TodayNews</text>
 			</view>
-			<view class="action">
+			<!-- <view class="action" @click="goNews">
 				<text class="text-lg text-grey text-shadow">更多</text>
-			</view>
+			</view> -->
 		</view>
 
 		<view class="skill-sequence-panel-content-wrapper">
@@ -56,14 +56,14 @@
 						<view class="nav-name">{{item.name}}</view>
 					</view>
 					<view class="nav-content">{{item.content}}</view>
-					<view @click="goVideo" class="nav-btn shadow" :class="'bg-index' + (index+1)">立即学习</view>
+					<view @click="goVideo" class="nav-btn shadow" :class="'bg-index' + (index+1)">立即查看</view>
 				</view>
 			</scroll-view>
 		</view>
 		<view class="cu-bar bg-white margin-top-xs">
 			<view class="action sub-title">
-				<text class="text-xl text-bold text-blue text-shadow">智慧信息</text>
-				<text class="text-ABC text-blue">curriculum</text>
+				<text class="text-xl text-bold text-blue text-shadow">老年大学</text>
+				<text class="text-ABC text-blue">UniversityForTheAged</text>
 			</view>
 			<view class="action" @click="goProjectList">
 				<text class="text-lg text-grey text-shadow">更多</text>
@@ -75,7 +75,7 @@
 			<view @click="goProject" class="cu-item shadow" v-for="(item, index) in projectList" :key="index">
 				<view class="image">
 					<image :src="item.imgUrl" mode="widthFix"></image>
-					<view class="cu-tag bg-gradual-orange">可商用</view>
+					<!-- <view class="cu-tag bg-gradual-orange">可商用</view> -->
 					<view class="cu-bar bg-shadeBottom"> <text class="text-cut">{{item.type}}</text></view>
 				</view>
 				<view class="cu-list menu-avatar">
@@ -87,7 +87,7 @@
 								<view class="text-gray text-sm">
 									<text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.user[0].read}}
 									<text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.user[0].like}}
-									<text class="cuIcon-shopfill margin-lr-xs"></text> {{item.user[0].use}}
+									<!-- <text class="cuIcon-shopfill margin-lr-xs"></text> {{item.user[0].use}} -->
 								</view>
 							</view>
 						</view>
@@ -118,16 +118,16 @@
 				},
 
 				bannerList: [{
-						imageUrl: 'http://cdn.zhoukaiwen.com/zjx_banner3.png',
+						imageUrl: 'http://p1362.bvimg.com/10465/ebe9ee53eacd9d82.png',
 					}, 
 					{
-						imageUrl: 'http://cdn.zhoukaiwen.com/zjx_banner1.png',
+						imageUrl: 'http://p1362.bvimg.com/10465/df28479dd7b9666a.png',
 					},
 					{
-						imageUrl: 'http://cdn.zhoukaiwen.com/zjx_banner2.png',
+						imageUrl: 'http://p1362.bvimg.com/10465/c8c87017129ce8b6.png',
 					},
 					{
-						imageUrl: 'http://cdn.zhoukaiwen.com/zjx_banner.png',
+						imageUrl: 'http://p1362.bvimg.com/10465/ebe9ee53eacd9d82.png',
 					}
 				],
 				categories: [{
@@ -156,24 +156,24 @@
 					name: '维修服务'
 				}],
 				curriculum: [{
-						name: 'uniapp项目开发',
-						content: 'uniapp小程序商城系统开发，实战项目...',
+						name: '生态资讯',
+						content: '稻蟹共生促发展 一天两用助增收...',
 					},
 					{
-						name: '后台管理系统',
-						content: 'vue+iview的后台管理系统建设系统开发...',
+						name: '文化建设',
+						content: '公开征集文化强国建议公告...',
 					},
 					{
-						name: 'App模板',
-						content: '基于uniapp开发的效率类APP，开发至上线...',
+						name: '乡村新闻',
+						content: '以乡村全面振兴为基础助力农村现代化建设...',
 					},
 					{
-						name: 'PC端官网开发',
-						content: 'html/css/jQuery建设的PC端官方门户网站...',
+						name: '脱贫攻坚',
+						content: '专家解读脱贫攻坚战中央一号文件...',
 					},
 					{
-						name: 'uniapp多端打包',
-						content: 'uniapp开发完成上线的打包流程，上架商店等...',
+						name: '健康指导',
+						content: '老年人如何保持延年益寿，这三条知识一定要记牢...',
 					},
 				],
 				projectList: proData
@@ -192,29 +192,46 @@
 			},
 			goCategorieslist: function(e) {
 				// console.log(e.currentTarget.dataset.mid)
-				if(e.currentTarget.dataset.mid == 1 || e.currentTarget.dataset.mid == 2 ){
+				if(e.currentTarget.dataset.mid == 1 ){
 					uni.navigateTo({
-						url: '../timeline?mid=' + e.currentTarget.dataset.mid
+						url: '/page_vote/vote_index/vote_index'
 					})
-				}else if(e.currentTarget.dataset.mid == 3){
+				}
+				else if(e.currentTarget.dataset.mid == 2 )
+				{
+					uni.navigateTo({
+						url: '/page_express/express_index/express_index'
+					})
+				}
+				else if(e.currentTarget.dataset.mid == 3){
 					uni.navigateTo({
 						url: '../project/list'
+					})
+				}
+				else if(e.currentTarget.dataset.mid == 4){
+					uni.navigateTo({
+						url: '/page_repair/repair_index/repair_index'
 					})
 				}
 			},
 			goProjectList(){
 				uni.navigateTo({
-					url: '../project/list'
+					url: '../me/course'
 				})
 			},
 			goProject(){
 				uni.navigateTo({
-					url: '../project/project'
+					url: '../video'
 				})
 			},
 			goVideo(){
 				uni.navigateTo({
 					url: '../video'
+				})
+			},
+			goNews(){
+				uni.navigateTo({
+					url: '/pages/index/news'
 				})
 			}
 		}
@@ -223,10 +240,11 @@
 <style lang="scss" scoped>
 	.swiper-box {
 		flex: 1;
+		height: 360rpx;
 	}
 
 	.swiper-item {
-		height: 100%;
+		height: 360rpx;
 	}
 	/*scroll-view外层*/
 	.skill-sequence-panel-content-wrapper {

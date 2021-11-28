@@ -1,6 +1,10 @@
 {
 	"easycom": {
-		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		"autoscan": true,
+		"custom": {
+			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue",
+			"fui-(.*)": "firstui-uni/firstui/fui-$1/fui-$1.vue"
+		}
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
@@ -55,10 +59,98 @@
 				"navigationStyle": "custom"
 			}
 		}
-	    
     ],
 	
 	"subPackages": [
+		{
+			"root": "page_express",
+			"pages": [
+				{
+				    "path" : "express_index/express_index",
+				    "style": {
+				    	"navigationStyle": "custom"
+				    }
+				    
+				}
+		        ,{
+                    "path" : "express_mypackage/express_mypackage",
+                    "style": {
+                    	"navigationStyle": "custom"
+                    }
+                
+                }
+                ,{
+                    "path" : "express_door_to_door/express_door_to_door",
+                    "style": {
+                    	"navigationStyle": "custom"
+                    }
+                
+                }
+                ,{
+                    "path" : "door_aoppoint/door_aoppoint",
+                    "style": {
+                    	"navigationStyle": "custom"
+                    }
+                
+                }
+                ,{
+                    "path" : "express_i_want_to_appoint/express_i_want_to_appoint",
+                    "style": {
+                    	"navigationStyle": "custom"
+                    }
+                
+                }
+                ,{
+                    "path" : "door_order_lookup_user/door_order_lookup_user",
+                    "style": {
+                    	"navigationStyle": "custom"
+                    }
+                
+                }
+                ,{
+                    "path" : "door_finished/door_finished",
+                    "style": {
+                    	"navigationStyle": "custom"
+                    }
+                
+                }
+                ,{
+                    "path" : "mypackage_details/mypackage_details",
+                    "style": {
+                    	"navigationStyle": "custom"
+                    }
+                
+                }
+            ]
+		},
+		{
+			"root": "page_repair",
+			"pages": [
+				{
+				    "path" : "repair_index/repair_index",
+				    "style": {
+				    	"navigationStyle": "custom"
+				    }
+				    
+				}
+		        ,{
+                    "path" : "repair_details/repair_details",
+                    "style": {
+                    	"navigationStyle": "custom"
+                    }
+                
+                }
+                ,{
+                    "path" : "repair_apply/repair_apply",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+		},
 		{
 			"root": "page_vote",
 			"pages": [{
@@ -206,7 +298,7 @@
 			{
 				"path": "aboutMe",
 				"style": {
-					"navigationBarTitleText": "关于作者",
+					
 					"navigationStyle": "custom"
 				}
 			},

@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "fui-card": "/node-modules/firstui-uni/firstui/fui-card/fui-card",
+    "u-icon": "/uview-ui/components/u-icon/u-icon",
+    "fui-row": "/node-modules/firstui-uni/firstui/fui-row/fui-row",
+    "fui-col": "/node-modules/firstui-uni/firstui/fui-col/fui-col",
+    "fui-button": "/node-modules/firstui-uni/firstui/fui-button/fui-button"
+  }
+}

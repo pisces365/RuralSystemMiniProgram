@@ -1,0 +1,1 @@
+<view class="{{['fui-row__box','data-v-201c4a56',flex?'fui-row__flex':'',justifyClass,alignClass]}}" style="{{'margin-top:'+(marginTop)+';'+('margin-bottom:'+(marginBottom)+';')+('margin-left:'+($root.m0+'rpx')+';')+('margin-right:'+($root.m1+'rpx')+';')}}"><slot></slot></view>

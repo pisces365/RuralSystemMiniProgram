@@ -14,7 +14,7 @@
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="page-box">
-							<view class="order" v-for="(res, index) in orderList[0]" :key="res.id">
+							<view class="order" v-for="(res, index) in orderList[0]" :key="res.id" @click="goCourse">
 								<view class="top">
 									<view class="left">
 										<uni-text class="cuIcon-titles text-blue"></uni-text>
@@ -62,7 +62,7 @@
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="page-box">
-							<view class="order" v-for="(res, index) in orderList[0]" :key="res.id">
+							<view class="order" v-for="(res, index) in orderList[0]" :key="res.id" @click="goCourse">
 								<view class="top">
 									<view class="left">
 										<uni-text class="cuIcon-titles text-blue"></uni-text>
@@ -242,6 +242,12 @@ export default {
 		}
 	},
 	methods: {
+		// 课班信息
+		goCourse() {
+			uni.navigateTo({
+				url: '/pages/video'
+			})
+		},
 		goClass(){
 			uni.showToast({
 			    title: '没有权限～',

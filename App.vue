@@ -1,4 +1,5 @@
 <script>
+	import fuiButton from "@/components/firstui/fui-button/fui-button"
 	import Vue from 'vue'
 	export default {
 		onLaunch: function() {
@@ -37,7 +38,8 @@
 </script>
 
 <style lang="scss">
-	@import "colorui/main.css";
+	@import "colorui/main.css"; 
 	@import "colorui/icon.css";
 	@import "uview-ui/index.scss";
+	@import "common/fui-app.css"
 </style>

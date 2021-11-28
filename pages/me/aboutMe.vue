@@ -1,33 +1,36 @@
 <!-- 关于作者 -->
 <template>
   <view class="about">
-
+	<cu-custom bgColor="bg-gradual-blue" :isBack="true">
+		<block slot="backText">返回</block>
+		<block slot="content">关于</block>
+	</cu-custom>
     <canvas canvas-id="bubble" :style="'width:' + width + 'px;height:' + height + 'px'" class="like-fx"></canvas>
     <like-fx ref="likeFx" :width="width" :height="height"></like-fx>
 	
 	<view class="titleZ text-center align-center">
-		<text class="text-bold">关于作者</text>
+		<text class="text-bold">乡里办用户协议</text>
 		<view class="contentZ">
-			<text class="text-xl">项目作者:周凯文，一名6年经验乌黑秀发的九零后web前端程序员，坐标西安，自研项目：「宅家学IT」、「易凯科技」</text>
+			<text class="text-xl">重要须知：乡里办微信小程序端（以下统称“乡里办平台”或“本平台”）所有权人及其关联方（下称“乡里办”）在此特别提醒您仔细阅读（未成年人应在其法定监护人的陪同下阅读）本《用户协议》（下称“本协议”）中的各个条款，尤其是以粗体并下划线标示的条款，包括但不限于免除或者限制乡里办责任的条款、对用户权利进行限制的条款以及约定争议解决方式、司法管辖的条款。您有权选择同意或者不同意本协议。</text>
 		</view>
 	</view>
 	
 	<view class="titleZ text-center align-center margin-top-xl">
-		<text class="text-bold">想学习？有需求？有项目？</text>
+		<text class="text-bold">开发人员名单</text>
 		<view class="contentZ margin-top-lg">
-			<text class="text-xl text-bold">「宅家学」</text>
-			<text class="text-xl">：软件技术开发培训（实战项目），1至4个月课程可随意选择，课程包含：UI设计、Web前端、Java后台等，挑战万元月薪，快来宅家学吧～</text>
+			<text class="text-xl text-bold">前端界面开发</text>
+			<text class="text-xl">：杨捷宁 赵泷</text>
 		</view>
 		<view class="contentZ" style="margin-top: 40rpx;">
-			<text class="text-xl text-bold">「易凯科技」</text>
-			<text class="text-xl">：承接电商/OA/分销/财务/进销存/ERP系统/H5页面/网站建设/小程序/公众号/App定制开发/名片设计...</text>
+			<text class="text-xl text-bold">界面设计</text>
+			<text class="text-xl">：刘元驰 赵泷 杨捷宁 陈培枫 施志豪</text>
 		</view>
 	</view>
 	
-    <button class='' open-type="contact">
+   <!-- <button class='' open-type="contact">
       <image src='http://p1362.bvimg.com/10465/2fb7d96656bcc797.png' class='share-img png round shadow-lg bg-white' mode='aspectFit'>
       </image>
-    </button>
+    </button> -->
   </view>
 </template>
 

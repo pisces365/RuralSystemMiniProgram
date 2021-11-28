@@ -10,6 +10,27 @@
   ],
   "subPackages": [
     {
+      "root": "page_express",
+      "pages": [
+        "express_index/express_index",
+        "express_mypackage/express_mypackage",
+        "express_door_to_door/express_door_to_door",
+        "door_aoppoint/door_aoppoint",
+        "express_i_want_to_appoint/express_i_want_to_appoint",
+        "door_order_lookup_user/door_order_lookup_user",
+        "door_finished/door_finished",
+        "mypackage_details/mypackage_details"
+      ]
+    },
+    {
+      "root": "page_repair",
+      "pages": [
+        "repair_index/repair_index",
+        "repair_details/repair_details",
+        "repair_apply/repair_apply"
+      ]
+    },
+    {
       "root": "page_vote",
       "pages": [
         "vote_index/vote_index",

@@ -1,28 +1,7 @@
 <!-- 个人中心 -->
 <template>
 	<view class="components-theme">
-		<navigator target="miniProgram" app-id='wx307a52ca028d3c07' version='release' hover-class="none">
-			<view class="dong">
-				<view class="monster">
-					<view class="monster__face">
-						<view class="monster__eye avatar-eye avatar-eye--green eye--left">
-							<view class="avatar-eye-pupil pupil--green"><span class="avatar-eye-pupil-blackThing"><span class="avatar-eye-pupil-lightReflection"></span></span></view>
-						</view>
-						<view class="monster__eye avatar-eye avatar-eye--violet eye--right">
-							<view class="avatar-eye-pupil pupil--pink"><span class="avatar-eye-pupil-blackThing"><span class="avatar-eye-pupil-lightReflection"></span></span></view>
-						</view>
-						<view class="monster__noses">
-							<view class="monster__nose"></view>
-							<view class="monster__nose"></view>
-						</view>
-						<view class="monster__mouth">
-							<view class="monster__top"></view>
-							<view class="monster__bottom"></view>
-						</view>
-					</view>
-				</view>
-			</view>
-		</navigator>
+		
 		<!-- 弹窗确认 -->
 		<view class="cu-modal" :class="modalName=='Modal'?'show':''">
 			<view class="cu-dialog">
@@ -67,7 +46,7 @@
 		</view>
 
 		<block>
-			<view class='padding flex text-center text-grey bg-white shadow-warp-my'>
+			<!-- <view class='padding flex text-center text-grey bg-white shadow-warp-my'>
 				<view class='flex flex-sub flex-direction solid-right'>
 					<view class="text-xxl text-orange">829</view>
 					<view class="margin-top-sm">
@@ -83,7 +62,7 @@
 					<view class="margin-top-sm">
 						<text class='cuIcon-like'></text> 点赞</view>
 				</view>
-			</view>
+			</view> -->
 
 
 			<view class="cu-list menu card-menu margin-top-lg margin-bottom-sm shadow-shop bg-white text-black my-radius sm-border">
@@ -104,7 +83,7 @@
 					</view>
 				</view>
 
-				<view class="cu-item " @click="mentalTest">
+				<!-- <view class="cu-item " @click="mentalTest">
 					<button class='content cu-btn'>
 						<image src='http://p1362.bvimg.com/10465/615d2b284956653c.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>答题测试</text>
@@ -114,7 +93,7 @@
 						<view class="cu-tag round bg-olive light">性格</view>
 						<view class="cu-tag round bg-blue light">星座</view>
 					</view>
-				</view>
+				</view> -->
 
 				<!-- 听歌 -->
 				<!-- <view class="cu-item " bindtap="">
@@ -144,7 +123,7 @@
 
 			<view class="cu-list menu card-menu margin-top-lg margin-bottom-lg shadow-shop bg-white text-black my-radius sm-border">
 
-				<view class="cu-item ">
+				<!-- <view class="cu-item ">
 					<button class='content cu-btn' @click="goSalary">
 						<image src='http://p1362.bvimg.com/10465/b658cd9b8cc1ef00.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>薪资排名</text>
@@ -155,35 +134,35 @@
 						<image src='' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>课班信息</text>
 					</button>
-				</view>
+				</view> -->
 
 				<view class="cu-item ">
 					<button class='content cu-btn' open-type="contact">
-						<image src='' class='png' mode='aspectFit'></image>
-						<text class='text-lg margin-sm'>项目需求</text>
+						<image src='http://p1362.bvimg.com/10465/e8fdea3a41d7ec43.png' class='png' mode='aspectFit'></image>
+						<text class='text-lg margin-sm'>在线客服</text>
 					</button>
 				</view>
 
 				<view class="cu-item" @click="callPhoneNumber" data-number="18629591093">
 					<view class='content'>
-						<image src='' class='png' mode='aspectFit'></image>
+						<image src='http://p1362.bvimg.com/10465/e58a30497b249d1f.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>技术支持</text>
 					</view>
 					<view class="action">
-						<view class="cu-tag round bg-blue light">186 2959 1093</view>
+						<view class="cu-tag round bg-blue light">745 2959 1093</view>
 					</view>
 				</view>
 
 				<view class="cu-item">
 					<button class='content cu-btn' open-type="feedback">
-						<image src='' class='png' mode='aspectFit'></image>
+						<image src='http://p1362.bvimg.com/10465/42918ade3c4a8614.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>问题反馈</text>
 					</button>
 				</view>
 				<view class="cu-item">
 					<button class='content cu-btn' @click="goAboutMe">
-						<image src='' class='png' mode='aspectFit'></image>
-						<text class='text-lg margin-sm'>关于作者</text>
+						<image src='http://p1362.bvimg.com/10465/6d8ac9890ab147fd.png' class='png' mode='aspectFit'></image>
+						<text class='text-lg margin-sm'>关于乡里办</text>
 					</button>
 				</view>
 			</view>

@@ -110,17 +110,17 @@
 						title: '报修服务',
 						name: '报修服务',
 						color: '',
-						url: ''
+						url: '/page_repair/repair_index/repair_index'
 					},
 					{
-						title: '报修服务',
-						name: '报修服务',
+						title: '快递服务',
+						name: '快递服务',
 						color: '',
-						url: ''
+						url: '/page_express/express_index/express_index'
 					},
 					{
-						title: '报修服务',
-						name: '报修服务',
+						title: '租房服务',
+						name: '租房服务',
 						color: '',
 						url: ''
 					}],

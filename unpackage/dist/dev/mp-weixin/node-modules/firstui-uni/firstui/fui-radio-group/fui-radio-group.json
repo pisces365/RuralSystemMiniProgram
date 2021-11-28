@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "fui-form-field": "/node-modules/firstui-uni/firstui/fui-form-field/fui-form-field"
+  },
+  "component": true
+}
