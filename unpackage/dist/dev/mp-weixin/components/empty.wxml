@@ -1,0 +1,1 @@
+<view class="null text-center u-p-b-50 data-v-392aa2a2" style="{{'margin-top:'+(top+'rpx')+';'}}"><image style="{{'width:'+(width+'rpx')+';'+('height:'+(height+'rpx')+';')}}" src="http://p1362.bvimg.com/10465/c797c294e350a5ca.png" mode class="data-v-392aa2a2"></image><view class="u-font-30 text-center u-m-t-30 data-v-392aa2a2">{{text}}</view></view>

@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "index": "/page_transportation/transportation_item/home/index",
+    "bus_select": "/page_transportation/transportation_item/bus_select"
+  }
+}

@@ -98,13 +98,13 @@
 						title: '交通服务',
 						name: '交通服务',
 						color: '',
-						url: ''
+						url: '/page_transportation/transportation_together/transportation_together'
 					},
 					{
 						title: '医疗服务',
 						name: '医疗服务',
 						color: '',
-						url: ''
+						url: '/page_cure/cure_index/cure_index'
 					},
 					{
 						title: '报修服务',

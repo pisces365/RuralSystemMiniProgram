@@ -1,0 +1,23 @@
+
+.form-control{
+	margin: 10% 2.5% 40rpx;
+	width:95%;
+	padding:6px 12px;
+	font-size:14px;
+	color:#555;
+	background-color:#fff;
+	background-image: none;
+	border:1px solid #ccc;
+	border-radius:4px;
+}
+.button-style{
+	margin: 2% 77% 40rpx;
+	width:20%;
+}
+.blueBtn {
+	width: 500rpx;
+	margin: 50rpx auto;
+	display: block;
+	line-height: 80rpx;
+}
+

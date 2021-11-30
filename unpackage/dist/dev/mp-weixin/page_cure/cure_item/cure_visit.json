@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "fui-input": "/node-modules/firstui-uni/firstui/fui-input/fui-input"
+  }
+}

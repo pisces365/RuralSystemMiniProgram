@@ -39,6 +39,26 @@
       ]
     },
     {
+      "root": "page_cure",
+      "pages": [
+        "cure_index/cure_index",
+        "cure_item/cure_Crowdedness",
+        "cure_item/cure_inquiry",
+        "cure_item/cure_take_number",
+        "cure_item/cure_visit"
+      ]
+    },
+    {
+      "root": "page_transportation",
+      "pages": [
+        "transportation_index/transportation_index",
+        "transportation_item/bus_select",
+        "transportation_item/car_order",
+        "transportation_item/home/index",
+        "transportation_together/transportation_together"
+      ]
+    },
+    {
       "root": "tn_components",
       "pages": [
         "pano",
@@ -75,7 +95,10 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#F8F8F8",
+    "backgroundTextStyle": "dark",
+    "backgroundColorTop": "#F1F4FA",
+    "backgroundColorBottom": "#F1F4FA"
   },
   "plugins": {
     "tencentvideo": {
@@ -90,6 +113,7 @@
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom",
-    "tn-custom": "/components/TnCustom/TnCustom"
+    "tn-custom": "/components/TnCustom/TnCustom",
+    "empty": "/components/empty"
   }
 }
