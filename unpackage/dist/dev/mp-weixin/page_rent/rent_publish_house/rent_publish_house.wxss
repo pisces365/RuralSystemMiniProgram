@@ -1,0 +1,18 @@
+
+.fui-card__content {
+	margin: 0 20rpx;
+}
+.repair-image {
+	height: 120rpx;
+	width: 120rpx;
+	border-radius: 30rpx !important;
+}
+.add-image {
+	background-color: #c4c5c4;
+	background-image: url(http://p1362.bvimg.com/10465/b00e7542e59400d2.png);
+	background-repeat: no-repeat;
+	background-size: 60rpx;
+	background-position: center;
+	/* border: 1px solid #A6A7A6; */
+}
+

@@ -4,11 +4,11 @@
 			<block slot="backText">返回</block>
 			<block slot="content">上门订单详情</block>
 		</cu-custom>
-		
-		
+
+
 		<view class="fui-page__bd">
 		</view>
-		
+
 		<fui-card src="http://p1362.bvimg.com/10465/e54a26087ddfd7d5.png" full title="订单状态" tag=" ">
 			<view class="fui-card__content" style="padding: 16rpx 40rpx;">
 				<view class="">
@@ -16,7 +16,7 @@
 						订单编号
 					</text>
 					<text style="float: right;">
-						123123123123
+						{{items.deliveryId}}
 					</text>
 				</view>
 			</view>
@@ -26,7 +26,7 @@
 						下单时间
 					</text>
 					<text style="float: right;">
-						123123123123
+						{{items.packageEta}}
 					</text>
 				</view>
 			</view>
@@ -36,7 +36,7 @@
 						支付方式
 					</text>
 					<text style="float: right;">
-						123123123123
+						{{items.packagePaymentMethod}}
 					</text>
 				</view>
 			</view>
@@ -46,7 +46,7 @@
 						无接触配送
 					</text>
 					<text style="float: right;">
-						是
+						{{items.deliveryContactlessDistribution==1?'是':'否'}}
 					</text>
 				</view>
 			</view>
@@ -56,16 +56,41 @@
 						号码保护
 					</text>
 					<text style="float: right;">
-						是
+						{{items.deliveryPhonesProtected==1?'是':'否'}}
 					</text>
 				</view>
 			</view>
 		</fui-card>
-		
-		
+
 		<view class="fui-page__bd">
 		</view>
-		
+
+		<fui-card src="http://p1362.bvimg.com/10465/e54a26087ddfd7d5.png" full title="预计送达时间" tag=" ">
+			<view class="fui-card__content" style="padding: 16rpx 40rpx;">
+				<view class="">
+					<text>
+						日期
+					</text>
+					<text style="float: right;">
+						{{date}}
+					</text>
+				</view>
+			</view>
+			<view class="fui-card__content" style="padding: 16rpx 40rpx;">
+				<view class="">
+					<text>
+						时间
+					</text>
+					<text style="float: right;">
+						{{time}}
+					</text>
+				</view>
+			</view>
+		</fui-card>
+
+		<view class="fui-page__bd">
+		</view>
+
 		<fui-card src="http://p1362.bvimg.com/10465/e54a26087ddfd7d5.png" full title="配送员信息" tag=" ">
 			<view class="fui-card__content" style="padding: 16rpx 40rpx;">
 				<view class="">
@@ -73,7 +98,7 @@
 						配送员姓名
 					</text>
 					<text style="float: right;">
-						张柏王
+						{{name}}
 					</text>
 				</view>
 			</view>
@@ -83,50 +108,42 @@
 						配送员电话
 					</text>
 					<text style="float: right;">
-						18283838294
+						{{phone}}
 					</text>
 				</view>
-			</view>			
+			</view>
 		</fui-card>
-		
+
 		<view class="fui-page__bd">
 		</view>
-		
+
 		<view class="fui-page__bd">
 			<view class="fui-section__title">包裹信息</view>
 			<view class="page-box">
-				<view  class="order">
-					
+				<view class="order">
+
 					<view class="item">
 						<view class="left">
-							<image :src="dataList2.imgUrl" mode="aspectFill"></image>
+							<image src="http://p1362.bvimg.com/10465/1b763af7e4a3d120.png" mode="aspectFill"></image>
 						</view>
 						<view class="content">
 							<view class="top">
 								<view class="right">
 									<view class="border2">
-										{{dataList2.type}}
+										{{items.packageLogisticsCompany}}
 									</view>
-									<!-- <view v-if="dataList2.status == 2" class="border1">
-										即将开始
-									</view>
-									<view v-if="dataList2.status == 3" class="border3">
-										已结束
-									</view> -->
 								</view>
 								<view class="left">
 									<uni-text class="cuIcon-titles text-blue"></uni-text>
-									<view class="store">{{ dataList2.title }}</view>
-									<!-- <u-icon name="arrow-right" color="rgb(203,203,203)" :size="26"></u-icon> -->
+									<view class="store">{{ items.packageDetails }}</view>
 								</view>
-								
+
 							</view>
-							<view class="delivery-time" style="color: #fff;">none</view>
-							<view class="delivery-time">当前状态：</view>
-							<view class="type">{{ dataList2.details }}</view>
-							
+							<view class="type">始发地：{{ items.packageSenderAddress }}</view>
+							<view class="type">寄件人：{{ items.packageSenderName }}</view>
+
 						</view>
-						
+
 					</view>
 					<view class="fui-card__content" style="padding: 16rpx 00rpx;">
 						<view class="">
@@ -134,111 +151,148 @@
 								配送费
 							</text>
 							<text style="float: right;">
-								18元
+								{{items.deliveryFreight}}元
 							</text>
 						</view>
 					</view>
 					<view class="fui-card__content" style="padding: 16rpx 0rpx;">
 						<view class="">
 							<text>
-								送达时间
+								用户期望送达时间
 							</text>
 							<text style="float: right;">
-								2021年10月10日21：00：00
+								{{items.deliveryEta}}
 							</text>
 						</view>
 					</view>
 				</view>
 			</view>
 		</view>
-		
-		
+
+
 		<view class="fui-page__bd"></view>
 		<view class="fui-page__bd"></view>
-		
-		<view class="" style=" z-index: 100; 
+
+		<!-- <view class="" style=" z-index: 100; 
 						position: fixed; 
 						bottom: -0rpx; 
 						width: 100%; 
 						background-color: #fff;
 						padding: 20rpx 30rpx;
-						box-shadow: 0px 0px 20px #888888;" >
-			
+						box-shadow: 0px 0px 20px #888888;">
+
 			<fui-row>
-				<fui-col :span="11">
-					<view class="fui-col__item fui-color__black">
-						<fui-button>申诉</fui-button>
-					</view>
-				</fui-col>
-				<fui-col :span="2">
-					<view class="fui-col__item fui-color__black" style="color: #fff;">
-						123
-					</view>
-				</fui-col>
-				<fui-col :span="11">
+				<fui-col :span="24">
 					<view class=" fui-col__item fui-color__black">
 						<fui-button>联系配送员</fui-button>
 					</view>
 				</fui-col>
 			</fui-row>
-		</view>
-		
+		</view> -->
+
 	</view>
 </template>
 
 <script>
+	import {
+		finishedDeliveryRequestByPackageId
+	} from '@/apis/express_apis.js'
+	import {
+		selectUserByUid
+	} from '@/apis/user_apis.js'
 	import GeocodeUtils from '../../common/geocode-utils.js'
 	export default {
 		data() {
 			return {
+				name: '',
+				phone: '',
+				date: '',
+				time: '',
 				text: '',
 				value: 0,
 				send: false,
 				protected: false,
-				dataList2: 
-					{
-						id: 1,
-						imgUrl: 'http://p1362.bvimg.com/10465/b7a23d05f09c09ae.jpg',
-						type: '顺丰',
-						title: '捷安特自行车',
-						details: '浙江省杭州市新安江物流集团总公司，已收入',
-						time: '2020年11月11日15：00：00'
-					}
-				,
+				items: {
+					id: 1,
+					imgUrl: 'http://p1362.bvimg.com/10465/b7a23d05f09c09ae.jpg',
+					type: '顺丰',
+					title: '捷安特自行车',
+					details: '浙江省杭州市新安江物流集团总公司，已收入',
+					time: '2020年11月11日15：00：00'
+				},
 				markerImg: [
 					'http://p1362.bvimg.com/10465/2fb7d96656bcc797.png',
 					'http://p1362.bvimg.com/10465/2fb7d96656bcc797.png',
 					'http://p1362.bvimg.com/10465/2fb7d96656bcc797.png',
 					'http://p1362.bvimg.com/10465/2fb7d96656bcc797.png'
 				],
-				initHeight:340,
-					navIndex: 0,
-					map: '',
-					latitude: 34.34127,
-					longitude: 108.93984,
-					scale: 12,
-					covers: [],
-					isTraffic: false,
-					show_location: false,
-					keywords: '',
-					stationList: [],
-					showList: false,
-					actionShow: false,
-					flag: 0,
-					e_zhongxin: '',
-					e_lukuang: '',
-					placeholder: 'http://p1362.bvimg.com/10465/1207c3f2118dcf1f.png',
-				
+				initHeight: 340,
+				navIndex: 0,
+				map: '',
+				latitude: 34.34127,
+				longitude: 108.93984,
+				scale: 12,
+				covers: [],
+				isTraffic: false,
+				show_location: false,
+				keywords: '',
+				stationList: [],
+				showList: false,
+				actionShow: false,
+				flag: 0,
+				e_zhongxin: '',
+				e_lukuang: '',
+				placeholder: 'http://p1362.bvimg.com/10465/1207c3f2118dcf1f.png',
+
 			}
 		},
 		onReady() {
-			
+
 		},
-		onLoad() {
-			
+		onLoad(option) {
+			console.log(option.packageId);
+			var _this = this;
+			// this.e_zhongxin = 'http://p1362.bvimg.com/10465/c8f0852d6a46c59c.png';
+			// this.e_lukuang = 'http://p1362.bvimg.com/10465/5637d3c21b095b80.png';
+			// this.keywords = this.navList[this.navIndex];
+			var data = {
+				packageId: option.packageId
+			}
+
+			finishedDeliveryRequestByPackageId(data).then((res) => {
+				if (res.statusCode == "200") {
+					_this.items = res.data;
+					_this.items.packageEta = _this.items.packageEta.replace("T", " ").substr(0, 19);
+					_this.items.deliveryEta = _this.items.deliveryEta.replace("T", " ").substr(0, 19);
+					_this.date = _this.items.deliveryEta.split(' ')[0];
+					_this.time = _this.items.deliveryEta.split(' ')[1];
+					console.log(res.data);
+					var user = {
+						uid: res.data.puid
+					}
+					selectUserByUid(user).then((res) => {
+						if (res.statusCode == "200") {
+							_this.name = res.data[0].name;
+							_this.phone = res.data[0].phone;
+						} else {
+							uni.showToast({
+								title: '获取失败',
+								duration: 2000,
+								icon: 'error'
+							});
+						}
+					})
+				} else {
+					uni.showToast({
+						title: '获取失败',
+						duration: 2000,
+						icon: 'error'
+					});
+				}
+			})
 		},
 		mounted() {
-			
+
 		},
 		filters: {
 			formatLatlon(val) {
@@ -349,7 +403,7 @@
 				});
 				this.show_location = true;
 			},
-			refresh(){
+			refresh() {
 				this.getLocation()
 			},
 			//路况
@@ -447,25 +501,21 @@
 				}
 				return re;
 			},
-			change(event){
+			change(event) {
 				this.value = event.detail.value;
 			},
-			sendf(event){
-				if(this.send == false)
-				{
+			sendf(event) {
+				if (this.send == false) {
 					this.send = true;
-				}
-				else{
+				} else {
 					this.send = false;
 				}
 			},
-			
-			protectedf(event){
-				if(this.protected == false)
-				{
+
+			protectedf(event) {
+				if (this.protected == false) {
 					this.protected = true;
-				}
-				else{
+				} else {
 					this.protected = false;
 				}
 				return this.protected;
@@ -490,184 +540,213 @@
 </style>
 
 <style lang="scss" scoped>
-/* #ifndef H5 */
-page {
-	height: 100%;
-	background-color: #f2f2f2;
-}
-/* #endif */
+	/* #ifndef H5 */
+	page {
+		height: 100%;
+		background-color: #f2f2f2;
+	}
+
+	/* #endif */
 </style>
 
 <style lang="scss" scoped>
-	
-button::after { border: none }
-.order {
-	width: 710rpx;
-	background-color: #ffffff;
-	margin: 20rpx auto;
-	border-radius: 20rpx;
-	box-sizing: border-box;
-	padding: 20rpx;
-	font-size: 28rpx;
-	.top {
-		display: flex;
-		justify-content: space-between;
-		.left {
-			display: flex;
-			align-items: center;
-			.store {
-				margin: 0 10rpx;
-				font-size: 34rpx;
-				font-weight: bold;
-			}
-		}
-		.right {
-			
-			.progressBox{
-				width: 60rpx;
-				float: right;
-				
-			}
-			
-			.border1{
-				border-radius: 10rpx;
-				background-color: rgba(24, 181, 102, 0.1);
-				color: #18b566;
-				padding: 4rpx 6rpx;
-			}
-			
-			.border2{
-				border-radius: 10rpx;
-				background-color: rgba(242, 145, 0, 0.1);
-				color: #f29100;
-				padding: 4rpx 6rpx;
-			}
-			
-			.border3{
-				border-radius: 10rpx;
-				background-color: rgba(130, 132, 138, 0.1);
-				color: #82848a;
-				padding: 4rpx 6rpx;
-			}
-		}
+	button::after {
+		border: none
 	}
-	.item {
-		display: flex;
-		margin: 20rpx 0 0;
-		.left {
-			margin-right: 20rpx;
-			image {
-				width: 260rpx;
-				height: 190rpx;
-				border-radius: 10rpx;
-			}
-		}
-		.content {
-			.title {
-				font-size: 28rpx;
-				line-height: 45rpx;
-			}
-			.type {
-				margin: 6rpx 0;
-				font-size: 24rpx;
-				color: $u-tips-color;
-				text-overflow: -o-ellipsis-lastline;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				display: -webkit-box;
-				-webkit-line-clamp: 3;
-				line-clamp: 3;
-				-webkit-box-orient: vertical;
-			}
-			.delivery-time {
-				color: #0081ff;
-				font-size: 24rpx;
-			}
-		}
-		.right {
-			
-			text-align: right;
-			.decimal {
-				font-size: 24rpx;
-				margin-top: 4rpx;
-			}
-			.number {
-				color: $u-tips-color;
-				font-size: 24rpx;
-			}
-		}
-	}
-	.total {
-		margin-top: 20rpx;
-		text-align: right;
-		font-size: 24rpx;
-		.total-price {
-			font-size: 32rpx;
-		}
-	}
-	.bottom {
-		line-height: 70rpx;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		.btnBox{
-			width: 150rpx;
+
+	.order {
+		width: 710rpx;
+		background-color: #ffffff;
+		margin: 20rpx auto;
+		border-radius: 20rpx;
+		box-sizing: border-box;
+		padding: 20rpx;
+		font-size: 28rpx;
+
+		.top {
 			display: flex;
 			justify-content: space-between;
-			.btn {
-				line-height: 52rpx;
-				width: 140rpx;
-				border-radius: 12rpx;
-				border: 2rpx solid $u-tips-color;
-				font-size: 26rpx;
-				text-align: center;
-				color: $u-tips-color;
+
+			.left {
+				display: flex;
+				align-items: center;
+
+				.store {
+					margin: 0 10rpx;
+					font-size: 34rpx;
+					font-weight: bold;
+				}
 			}
-			.evaluate {
-				color: $u-type-primary;
-				border-color: $u-type-primary;
+
+			.right {
+
+				.progressBox {
+					width: 60rpx;
+					float: right;
+
+				}
+
+				.border1 {
+					border-radius: 10rpx;
+					background-color: rgba(24, 181, 102, 0.1);
+					color: #18b566;
+					padding: 4rpx 6rpx;
+				}
+
+				.border2 {
+					border-radius: 10rpx;
+					background-color: rgba(242, 145, 0, 0.1);
+					color: #f29100;
+					padding: 4rpx 6rpx;
+				}
+
+				.border3 {
+					border-radius: 10rpx;
+					background-color: rgba(130, 132, 138, 0.1);
+					color: #82848a;
+					padding: 4rpx 6rpx;
+				}
+			}
+		}
+
+		.item {
+			display: flex;
+			margin: 20rpx 0 0;
+
+			.left {
+				margin-right: 20rpx;
+
+				image {
+					width: 260rpx;
+					height: 190rpx;
+					border-radius: 10rpx;
+				}
+			}
+
+			.content {
+				.title {
+					font-size: 28rpx;
+					line-height: 45rpx;
+				}
+
+				.type {
+					margin: 6rpx 0;
+					font-size: 24rpx;
+					color: $u-tips-color;
+					text-overflow: -o-ellipsis-lastline;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					-webkit-line-clamp: 3;
+					line-clamp: 3;
+					-webkit-box-orient: vertical;
+				}
+
+				.delivery-time {
+					color: #0081ff;
+					font-size: 24rpx;
+				}
+			}
+
+			.right {
+
+				text-align: right;
+
+				.decimal {
+					font-size: 24rpx;
+					margin-top: 4rpx;
+				}
+
+				.number {
+					color: $u-tips-color;
+					font-size: 24rpx;
+				}
+			}
+		}
+
+		.total {
+			margin-top: 20rpx;
+			text-align: right;
+			font-size: 24rpx;
+
+			.total-price {
+				font-size: 32rpx;
+			}
+		}
+
+		.bottom {
+			line-height: 70rpx;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.btnBox {
+				width: 150rpx;
+				display: flex;
+				justify-content: space-between;
+
+				.btn {
+					line-height: 52rpx;
+					width: 140rpx;
+					border-radius: 12rpx;
+					border: 2rpx solid $u-tips-color;
+					font-size: 26rpx;
+					text-align: center;
+					color: $u-tips-color;
+				}
+
+				.evaluate {
+					color: $u-type-primary;
+					border-color: $u-type-primary;
+				}
 			}
 		}
 	}
-}
-.centre {
-	text-align: center;
-	margin: 200rpx auto;
-	font-size: 32rpx;
-	image {
-		width: 300rpx;
-		border-radius: 50%;
-		margin: 0 auto;
-	}
-	.tips {
-		font-size: 24rpx;
-		color: #999999;
-		margin-top: 20rpx;
-	}
-	.btn {
-		margin: 80rpx auto;
-		width: 200rpx;
-		border-radius: 32rpx;
-		line-height: 64rpx;
-		color: #ffffff;
-		font-size: 26rpx;
-		background: linear-gradient(270deg, #1cbbb4 0%, #0081ff 100%);
-	}
-}
-.wrap {
-	display: flex;
-	flex-direction: column;
-	height: calc(100vh - var(--window-top));
-	width: 100%;
-}
-.swiper-box {
-	flex: 1;
-}
-.swiper-item {
-	height: 100%;
-}
 
-.nav-box {
+	.centre {
+		text-align: center;
+		margin: 200rpx auto;
+		font-size: 32rpx;
+
+		image {
+			width: 300rpx;
+			border-radius: 50%;
+			margin: 0 auto;
+		}
+
+		.tips {
+			font-size: 24rpx;
+			color: #999999;
+			margin-top: 20rpx;
+		}
+
+		.btn {
+			margin: 80rpx auto;
+			width: 200rpx;
+			border-radius: 32rpx;
+			line-height: 64rpx;
+			color: #ffffff;
+			font-size: 26rpx;
+			background: linear-gradient(270deg, #1cbbb4 0%, #0081ff 100%);
+		}
+	}
+
+	.wrap {
+		display: flex;
+		flex-direction: column;
+		height: calc(100vh - var(--window-top));
+		width: 100%;
+	}
+
+	.swiper-box {
+		flex: 1;
+	}
+
+	.swiper-item {
+		height: 100%;
+	}
+
+	.nav-box {
 		display: flex;
 		text-align: center;
 		height: 80rpx;
@@ -817,5 +896,3 @@ button::after { border: none }
 		}
 	}
 </style>
-
-

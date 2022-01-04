@@ -10,16 +10,33 @@
   ],
   "subPackages": [
     {
+      "root": "page_travel",
+      "pages": [
+        "travel_index/travel_index"
+      ]
+    },
+    {
+      "root": "page_rent",
+      "pages": [
+        "rent_index/rent_index",
+        "rent_room_details/rent_room_details",
+        "rent_publish_house/rent_publish_house",
+        "rent_my_house/rent_my_house",
+        "rent_appointment_view/rent_appointment_view"
+      ]
+    },
+    {
       "root": "page_express",
       "pages": [
         "express_index/express_index",
         "express_mypackage/express_mypackage",
         "express_door_to_door/express_door_to_door",
-        "door_aoppoint/door_aoppoint",
+        "door_appoint/door_appoint",
         "express_i_want_to_appoint/express_i_want_to_appoint",
         "door_order_lookup_user/door_order_lookup_user",
         "door_finished/door_finished",
-        "mypackage_details/mypackage_details"
+        "mypackage_details/mypackage_details",
+        "door_appointment_no_order/door_appointment_no_order"
       ]
     },
     {
@@ -42,10 +59,16 @@
       "root": "page_cure",
       "pages": [
         "cure_index/cure_index",
-        "cure_item/cure_Crowdedness",
+        "cure_item/cure_take_number_check",
         "cure_item/cure_inquiry",
+        "cure_item/cure_inquiry_check",
+        "cure_item/cure_inquiry_check_detail",
         "cure_item/cure_take_number",
-        "cure_item/cure_visit"
+        "cure_item/cure_visit",
+        "cure_item/cure_visit_check",
+        "cure_item/cure_visit_check_detail",
+        "cure_item/cure_human",
+        "cure_item/cure_message"
       ]
     },
     {

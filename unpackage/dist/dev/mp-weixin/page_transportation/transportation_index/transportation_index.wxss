@@ -1,13 +1,13 @@
 
-.font_transparency{
-		color:transparent;
+.font_transparency {
+		color: transparent;
 }
-.bgpicture{
-		
-		width:320px;
-		height:500px;
-		
-		background-size:100% 100%;
+.bgpicture {
+
+		width: 320px;
+		height: 500px;
+
+		background-size: 100% 100%;
 		background-image: url(http://p1362.bvimg.com/10465/565dd61f784a1eae.jpg);
 }
 .bg-top-blue {
@@ -132,6 +132,7 @@
 			        transform: translateY(0px);
 }
 }
+
 	/* 
   2f9bfe 主色蓝
   189eff 配色蓝
@@ -279,6 +280,7 @@
 .shadowimport {
 		box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0.1) !important;
 }
+
 	/* 标签 */
 .bg-label1.light {
 		color: #ff3434;
@@ -348,6 +350,7 @@
 		background-color: #0acffe;
 		color: #fff;
 }
+
 	/*  */
 .bg-exper1 {
 		background-color: #FF4F94;
@@ -373,6 +376,7 @@
 		background-color: #9c26b0;
 		color: #fff;
 }
+
 	/*  */
 .bg-kuxuan1 {
 		background-color: #FF5656;

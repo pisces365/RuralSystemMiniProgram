@@ -7,7 +7,7 @@
 		</cu-custom>
 
 		<view class="container">
-			<u-notice-bar mode="horizontal" type="primary" :list="list"></u-notice-bar>
+			<!-- <u-notice-bar mode="horizontal" type="primary" :list="list"></u-notice-bar> -->
 
 			<view class="cu-bar bg-white margin-top-xs">
 				<view class="action sub-title">

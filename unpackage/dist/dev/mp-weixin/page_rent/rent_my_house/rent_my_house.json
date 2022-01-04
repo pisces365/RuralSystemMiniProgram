@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "s-row": "/uni_modules/s-ui/components/s-row/s-row",
+    "s-col": "/uni_modules/s-ui/components/s-col/s-col",
+    "s-button": "/uni_modules/s-ui/components/s-button/s-button"
+  }
+}

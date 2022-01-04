@@ -5,14 +5,12 @@
 			<block slot="backText">返回</block>
 			<block slot="content">包裹物流详情</block>
 		</cu-custom>
-		
-		
-		
+
 		<!-- 需求制定 -->
 		<view class="wrap">
 			<view class="page-box">
 				<view class="order" v-for="(res, index) in dataList2" :key="res.id">
-					
+
 					<view class="item">
 						<view class="left">
 							<image :src="res.imgUrl" mode="aspectFill"></image>
@@ -23,32 +21,26 @@
 									<view class="border2">
 										{{res.type}}
 									</view>
-									<!-- <view v-if="res.status == 2" class="border1">
-										即将开始
-									</view>
-									<view v-if="res.status == 3" class="border3">
-										已结束
-									</view> -->
 								</view>
 								<view class="left">
 									<uni-text class="cuIcon-titles text-blue"></uni-text>
 									<view class="store">{{ res.title }}</view>
-									<!-- <u-icon name="arrow-right" color="rgb(203,203,203)" :size="26"></u-icon> -->
 								</view>
-								
+
 							</view>
-							
+
 							<view class="type">{{ res.details }}</view>
 							<view class="delivery-time">签收时间：</view>
 							<view class="delivery-time">{{ res.time }}</view>
 						</view>
 					</view>
-					
+
 				</view>
 			</view>
-			<swiper class="swiper-box" :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
-				
-				
+			<swiper class="swiper-box" :current="swiperCurrent" @transition="transition"
+				@animationfinish="animationfinish">
+
+
 				<!-- 第一页 -->
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;">
@@ -67,7 +59,7 @@
 									<view class="margin-top">您已在xxcun完成签收</view>
 								</view>
 							</view>
-							
+
 							<view class="cu-time">
 								<text class='cuIcon-selection text-white text-lg bg-blue round padding-xs'></text>
 								<text class='text-xl margin-left'>待收取</text>
@@ -81,7 +73,7 @@
 									<view class="margin-top">您的包裹已经到达代收点</view>
 								</view>
 							</view>
-							
+
 
 							<view class="cu-time">
 								<text class='cuIcon-selection text-white text-lg bg-blue round padding-xs'></text>
@@ -155,7 +147,7 @@
 				</swiper-item>
 			</swiper>
 		</view>
-		
+
 	</view>
 </template>
 
@@ -163,16 +155,14 @@
 	export default {
 		data() {
 			return {
-				dataList2: [
-					{
-						id: 1,
-						imgUrl: 'http://p1362.bvimg.com/10465/b7a23d05f09c09ae.jpg',
-						type: '顺丰',
-						title: '捷安特自行车',
-						details: '浙江省杭州市新安江物流集团总公司，已收入',
-						time: '2020年11月11日15：00：00'
-					}
-				],
+				dataList2: [{
+					id: 1,
+					imgUrl: 'http://p1362.bvimg.com/10465/b7a23d05f09c09ae.jpg',
+					type: '顺丰',
+					title: '捷安特自行车',
+					details: '浙江省杭州市新安江物流集团总公司，已收入',
+					time: '2020年11月11日15：00：00'
+				}],
 				show: 1,
 				current: 0,
 				list: [{
@@ -194,9 +184,9 @@
 		},
 		onLoad(option) {
 			console.log(option.mid)
-			if(option.mid == 1){
+			if (option.mid == 1) {
 				this.show = 1;
-			}else{
+			} else {
 				this.show = 2;
 			}
 		},
@@ -236,135 +226,155 @@
 </style>
 
 <style lang="scss" scoped>
-.order {
-	width: 710rpx;
-	background-color: #ffffff;
-	margin: 20rpx auto;
-	border-radius: 20rpx;
-	box-sizing: border-box;
-	padding: 20rpx;
-	font-size: 28rpx;
-	.top {
-		display: flex;
-		justify-content: space-between;
-		.left {
-			display: flex;
-			align-items: center;
-			.store {
-				margin: 0 10rpx;
-				font-size: 34rpx;
-				font-weight: bold;
-			}
-		}
-		.right {
-			
-			.progressBox{
-				width: 60rpx;
-				float: right;
-				
-			}
-			
-			.border1{
-				border-radius: 10rpx;
-				background-color: rgba(24, 181, 102, 0.1);
-				color: #18b566;
-				padding: 4rpx 6rpx;
-			}
-			
-			.border2{
-				border-radius: 10rpx;
-				background-color: rgba(242, 145, 0, 0.1);
-				color: #f29100;
-				padding: 4rpx 6rpx;
-			}
-			
-			.border3{
-				border-radius: 10rpx;
-				background-color: rgba(130, 132, 138, 0.1);
-				color: #82848a;
-				padding: 4rpx 6rpx;
-			}
-		}
-	}
-	.item {
-		display: flex;
-		margin: 20rpx 0 0;
-		.left {
-			margin-right: 20rpx;
-			image {
-				width: 260rpx;
-				height: 190rpx;
-				border-radius: 10rpx;
-			}
-		}
-		.content {
-			.title {
-				font-size: 28rpx;
-				line-height: 45rpx;
-			}
-			.type {
-				margin: 6rpx 0;
-				font-size: 24rpx;
-				color: $u-tips-color;
-				text-overflow: -o-ellipsis-lastline;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				display: -webkit-box;
-				-webkit-line-clamp: 3;
-				line-clamp: 3;
-				-webkit-box-orient: vertical;
-			}
-			.delivery-time {
-				color: #0081ff;
-				font-size: 24rpx;
-			}
-		}
-		.right {
-			
-			text-align: right;
-			.decimal {
-				font-size: 24rpx;
-				margin-top: 4rpx;
-			}
-			.number {
-				color: $u-tips-color;
-				font-size: 24rpx;
-			}
-		}
-	}
-	.total {
-		margin-top: 20rpx;
-		text-align: right;
-		font-size: 24rpx;
-		.total-price {
-			font-size: 32rpx;
-		}
-	}
-	.bottom {
-		line-height: 70rpx;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		.btnBox{
-			width: 150rpx;
+	.order {
+		width: 710rpx;
+		background-color: #ffffff;
+		margin: 20rpx auto;
+		border-radius: 20rpx;
+		box-sizing: border-box;
+		padding: 20rpx;
+		font-size: 28rpx;
+
+		.top {
 			display: flex;
 			justify-content: space-between;
-			.btn {
-				line-height: 52rpx;
-				width: 140rpx;
-				border-radius: 12rpx;
-				border: 2rpx solid $u-tips-color;
-				font-size: 26rpx;
-				text-align: center;
-				color: $u-tips-color;
+
+			.left {
+				display: flex;
+				align-items: center;
+
+				.store {
+					margin: 0 10rpx;
+					font-size: 34rpx;
+					font-weight: bold;
+				}
 			}
-			.evaluate {
-				color: $u-type-primary;
-				border-color: $u-type-primary;
+
+			.right {
+
+				.progressBox {
+					width: 60rpx;
+					float: right;
+
+				}
+
+				.border1 {
+					border-radius: 10rpx;
+					background-color: rgba(24, 181, 102, 0.1);
+					color: #18b566;
+					padding: 4rpx 6rpx;
+				}
+
+				.border2 {
+					border-radius: 10rpx;
+					background-color: rgba(242, 145, 0, 0.1);
+					color: #f29100;
+					padding: 4rpx 6rpx;
+				}
+
+				.border3 {
+					border-radius: 10rpx;
+					background-color: rgba(130, 132, 138, 0.1);
+					color: #82848a;
+					padding: 4rpx 6rpx;
+				}
+			}
+		}
+
+		.item {
+			display: flex;
+			margin: 20rpx 0 0;
+
+			.left {
+				margin-right: 20rpx;
+
+				image {
+					width: 260rpx;
+					height: 190rpx;
+					border-radius: 10rpx;
+				}
+			}
+
+			.content {
+				.title {
+					font-size: 28rpx;
+					line-height: 45rpx;
+				}
+
+				.type {
+					margin: 6rpx 0;
+					font-size: 24rpx;
+					color: $u-tips-color;
+					text-overflow: -o-ellipsis-lastline;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					-webkit-line-clamp: 3;
+					line-clamp: 3;
+					-webkit-box-orient: vertical;
+				}
+
+				.delivery-time {
+					color: #0081ff;
+					font-size: 24rpx;
+				}
+			}
+
+			.right {
+
+				text-align: right;
+
+				.decimal {
+					font-size: 24rpx;
+					margin-top: 4rpx;
+				}
+
+				.number {
+					color: $u-tips-color;
+					font-size: 24rpx;
+				}
+			}
+		}
+
+		.total {
+			margin-top: 20rpx;
+			text-align: right;
+			font-size: 24rpx;
+
+			.total-price {
+				font-size: 32rpx;
+			}
+		}
+
+		.bottom {
+			line-height: 70rpx;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.btnBox {
+				width: 150rpx;
+				display: flex;
+				justify-content: space-between;
+
+				.btn {
+					line-height: 52rpx;
+					width: 140rpx;
+					border-radius: 12rpx;
+					border: 2rpx solid $u-tips-color;
+					font-size: 26rpx;
+					text-align: center;
+					color: $u-tips-color;
+				}
+
+				.evaluate {
+					color: $u-type-primary;
+					border-color: $u-type-primary;
+				}
 			}
 		}
 	}
-}
+
 	.cu-timeline .cu-time {
 		width: 100%;
 		text-align: left;

@@ -1,0 +1,1 @@
+<block wx:if="{{showBadge}}"><view class="{{['s-badge','data-v-d99cdbd4',c_class]}}" style="{{(c_style)}}"><block wx:if="{{defaultSlot}}"><slot></slot></block><block wx:else>{{content}}</block></view></block>

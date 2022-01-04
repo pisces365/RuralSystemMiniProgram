@@ -1,0 +1,72 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "page_rent/rent_index/rent_index",
+          "pathName": "page_rent/rent_index/rent_index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page_rent/rent_publish_house/rent_publish_house",
+          "pathName": "page_rent/rent_publish_house/rent_publish_house",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page_express/express_door_to_door/express_door_to_door",
+          "pathName": "page_express/express_door_to_door/express_door_to_door",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page_express/express_i_want_to_appoint/express_i_want_to_appoint",
+          "pathName": "page_express/express_i_want_to_appoint/express_i_want_to_appoint",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page_express/express_door_to_door/express_door_to_door",
+          "pathName": "page_express/express_door_to_door/express_door_to_door",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page_rent/rent_my_house/rent_my_house",
+          "pathName": "page_rent/rent_my_house/rent_my_house",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/me/course",
+          "pathName": "pages/me/course",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/video",
+          "pathName": "pages/video",
+          "query": "courseId=Course%23svWNn",
+          "scene": null
+        },
+        {
+          "name": "page_rent/rent_room_details/rent_room_details",
+          "pathName": "page_rent/rent_room_details/rent_room_details",
+          "query": "hrId=20211218130600",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

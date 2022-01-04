@@ -1,0 +1,26 @@
+
+.fui-card__content {
+	margin: 0 20rpx;
+}
+.price {
+	color: #006FFF;
+	font-size: 46rpx;
+}
+.roomDetails {
+	font-size: 32rpx;
+	font-weight: bold;
+}
+.intro_title {
+	font-size: 30rpx;
+	color: #006FFF;
+	margin-bottom: 20rpx;
+}
+.intro_details {
+	font-size: 26rpx;
+	margin-bottom: 10rpx;
+}
+.landlord_image {
+	width: 100rpx;
+	height: 100rpx;
+}
+

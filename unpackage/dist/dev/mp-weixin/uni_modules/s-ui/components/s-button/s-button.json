@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "s-loading": "/uni_modules/s-ui/components/s-loading/s-loading",
+    "s-icon": "/uni_modules/s-ui/components/s-icon/s-icon"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "componentGenerics": {
+    "scoped-slots-default": true
+  },
+  "component": true,
+  "usingComponents": {
+    "s-popup": "/uni_modules/s-ui/components/s-popup/s-popup",
+    "s-button": "/uni_modules/s-ui/components/s-button/s-button",
+    "s-loading": "/uni_modules/s-ui/components/s-loading/s-loading"
+  }
+}

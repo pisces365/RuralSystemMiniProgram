@@ -24,6 +24,14 @@ page {
  */
 /* 水平间距 */
 /* 水平间距 */
+/*
+ * @Description: s-ui 组件scss变量
+ * @Author: 无痕
+ * @Email: 350801869@qq.com
+ * @Date: 2021-11-25 13:39:57
+ * @LastEditTime: 2021-11-26 14:00:49
+ * @LastEditors: 无痕
+ */
 /* 颜色变量 */
 /* 行为相关颜色 */
 /* 文字基本颜色 */
@@ -59,6 +67,14 @@ page.data-v-7ae4ad2e {
  */
 /* 水平间距 */
 /* 水平间距 */
+/*
+ * @Description: s-ui 组件scss变量
+ * @Author: 无痕
+ * @Email: 350801869@qq.com
+ * @Date: 2021-11-25 13:39:57
+ * @LastEditTime: 2021-11-26 14:00:49
+ * @LastEditors: 无痕
+ */
 /* 颜色变量 */
 /* 行为相关颜色 */
 /* 文字基本颜色 */

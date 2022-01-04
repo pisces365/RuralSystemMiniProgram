@@ -12,8 +12,9 @@
 			</view>
 			<view class='nav-list margin-top'>
 				<text class="font_transparency">占位</text>
-				<navigator open-type="navigate" hover-class='none' :url="item.url" :class="'nav-li bg-index' + (index+1)"
-				 v-for="(item, index) in transportation_indexList" :key="index">
+				<navigator open-type="navigate" hover-class='none' :url="item.url"
+					:class="'nav-li bg-index' + (index+1)" v-for="(item, index) in transportation_indexList"
+					:key="index">
 					<view class="nav-name">{{item.name}}</view>
 				</navigator>
 			</view>
@@ -27,8 +28,7 @@
 		name: 'Components',
 		data() {
 			return {
-				transportation_indexList:[
-					{
+				transportation_indexList: [{
 						title: '公交查询',
 						name: '公交查询',
 						color: '',
@@ -50,17 +50,19 @@
 </script>
 
 <style>
-	.font_transparency{
-		color:transparent;
+	.font_transparency {
+		color: transparent;
 	}
-	.bgpicture{
-		
-		width:320px;
-		height:500px;
-		
-		background-size:100% 100%;
+
+	.bgpicture {
+
+		width: 320px;
+		height: 500px;
+
+		background-size: 100% 100%;
 		background-image: url(http://p1362.bvimg.com/10465/565dd61f784a1eae.jpg);
 	}
+
 	.bg-top-blue {
 		background-image: linear-gradient(135deg, #52B5FC, #746BFE);
 		color: #fff;
@@ -230,6 +232,7 @@
 		background-image: url(http://p1362.bvimg.com/10465/565dd61f784a1eae.jpg);
 		background-size: cover;
 	}
+
 	.title-header_other {
 		display: flex;
 		height: 250rpx;
@@ -241,6 +244,7 @@
 		background-image: url(http://p1362.bvimg.com/10465/565dd61f784a1eae.jpg);
 		background-size: cover;
 	}
+
 	.radius-index {
 		overflow: hidden;
 		border-radius: 10rpx;
@@ -457,10 +461,12 @@
 		background-color: #FF4F94;
 		color: #fff;
 	}
+
 	.bg-exper2 {
 		background-color: #006FFF;
 		color: #fff;
 	}
+
 	.bg-exper3 {
 		background-color: #19D08B;
 		color: #fff;
@@ -511,18 +517,22 @@
 		background-color: #BC78EC;
 		color: #fff;
 	}
+
 	.bg-kuxuan7 {
 		background-color: #f39902;
 		color: #fff;
 	}
+
 	.bg-kuxuan8 {
 		color: #fff;
 		background: #19CF8A;
 	}
+
 	.bg-kuxuan9 {
 		color: #fff;
 		background: #8799a3;
 	}
+
 	.bg-kuxuan10 {
 		color: #fff;
 		background: #0396FF;

@@ -11,29 +11,30 @@
 					<view class="order">
 						<view class="top">
 							<view class="left">
-								<view class="store">{{ data.title }}</view>
+								<view class="store">{{ data.name }}</view>
 								<!-- <u-icon name="arrow-right" color="rgb(203,203,203)" :size="26"></u-icon> -->
 							</view>
 							<view class="right">
-								<view v-if="data.status == 1" class="border2">
+								<view v-if="data.state == 1" class="border2">
 									进行中
 								</view>
-								<view v-if="data.status == 2" class="border1">
+								<view v-if="data.state == 2" class="border1">
 									即将开始
 								</view>
-								<view v-if="data.status == 3" class="border3">
+								<view v-if="data.state == 3" class="border3">
 									已结束
 								</view>
 							</view>
 						</view>
-						<view class="item" v-for="(item, index) in data.content" :key="index">
+						<view class="item">
 							<view class="left">
-								<image :src="item.imgUrl" mode="aspectFill"></image>
+								<image :src="data.img" mode="aspectFill"></image>
 							</view>
 							<view class="content">
-								<view class="title u-line-2 text-bold">{{ item.department }}</view>
-								<view class="type">{{ item.details }}</view>
-								<view class="delivery-time">{{ item.time }}</view>
+								<view class="title u-line-2 text-bold">发布：{{ data.department }}</view>
+								<view class="type">{{ data.intro }}</view>
+								<view class="delivery-time">开始时间：{{ data.start }}</view>
+								<view class="delivery-time">结束时间：{{ data.end }}</view>
 							</view>
 						</view>
 					</view>
@@ -41,19 +42,21 @@
 			</view>
 
 			<view class="rankList_box">
-				<navigator url="../vote_person/vote_person" class="rankItem" v-for="(item,index) in rankList" :key="index">
+				<navigator :url="'../vote_person/vote_person?uid='+item.uid+'&id='+id" class="rankItem"
+					v-for="(item,index) in rankList" :key="index">
 					<view class="rankIndex">
 						<text>{{ index + 1 }}</text>
 					</view>
 					<view class="HeardBox">
-						<image class="rankHeard" :src="item.headimgurl "></image>
+						<image class="rankHeard" :src="item.img"></image>
 					</view>
 
 					<view class="NameBox">
 						<!-- <view class="userName">{{item.name}}</view> -->
 						<view class="userName text-bold">{{item.name}}</view>
-						<view class="userPost text-gray">{{item.policy}}</view>
-						<view class="color_ccc">{{item.sex}} ｜ <text class="text-blue">{{item.age}}</text>岁</view>
+						<view class="userPost text-gray">{{item.political_face}}</view>
+						<view class="color_ccc">{{item.sex==1?'男':'女'}} ｜ <text class="text-blue">{{item.age}}</text>岁
+						</view>
 					</view>
 					<view class="download_box">
 						<image mode="widthFix" src="http://p1362.bvimg.com/10465/837b3aeadb811f31.png"></image>
@@ -65,41 +68,69 @@
 </template>
 
 <script>
+	import {
+		voteDetailById,
+		votePersonDetailsByVoteInfoId
+	} from '@/apis/vote_apis.js'
 	export default {
 		data() {
 			return {
+				id: -1,
 				nowTime: '',
-				data:
-				{
-					title: 'xx村第四届村长选举',
-					status: 1,
-					content: [
-						{
-							imgUrl: 'http://p1362.bvimg.com/10465/b7a23d05f09c09ae.jpg',
-							department: 'xx村村委会',
-							details: '此次选举将产生1位村长，2位副村长。参与选举共4人。每位选民拥有一次投票权。',
-							time: '2021年10月01日-2021年10月10日',
-						}
-					]
-				},
+				data: {},
 				rankList: [{
-						headimgurl: 'http://cdn.zhoukaiwen.com/head4.jpg',
-						name: '张 *',
-						policy: '中共党员',
-						sex: '男',
-						age: '26'
-					}, {
-						headimgurl: 'http://cdn.zhoukaiwen.com/head5.jpg',
-						name: '李 * 阳',
-						policy: '中共党员',
-						sex: '男',
-						age: '34'
-					}
-				]
+					headimgurl: 'http://cdn.zhoukaiwen.com/head4.jpg',
+					name: '张 *',
+					policy: '中共党员',
+					sex: '男',
+					age: '26'
+				}, {
+					headimgurl: 'http://cdn.zhoukaiwen.com/head5.jpg',
+					name: '李 * 阳',
+					policy: '中共党员',
+					sex: '男',
+					age: '34'
+				}]
 			}
 		},
-		onLoad() {
-
+		onLoad(options) {
+			var _this = this;
+			console.log(options.id);
+			this.id = options.id;
+			var data = {
+				id: options.id
+			}
+			voteDetailById(data).then((res) => {
+				if (res.statusCode == "200") {
+					console.log(res.data);
+					_this.data = (res.data);
+					uni.hideLoading();
+				} else {
+					uni.hideLoading();
+					uni.showToast({
+						title: '获取失败',
+						duration: 2000,
+						icon: 'error'
+					});
+				}
+			})
+			var dataInfo = {
+				voteinfoid: options.id
+			}
+			votePersonDetailsByVoteInfoId(dataInfo).then((res) => {
+				if (res.statusCode == "200") {
+					console.log(res.data);
+					_this.rankList = (res.data);
+					uni.hideLoading();
+				} else {
+					uni.hideLoading();
+					uni.showToast({
+						title: '获取失败',
+						duration: 2000,
+						icon: 'error'
+					});
+				}
+			})
 		},
 		methods: {
 
@@ -118,7 +149,7 @@
 		background-size: 750rpx;
 		position: relative;
 	}
-	
+
 	.order {
 		width: 700rpx;
 		background-color: #ffffff;
@@ -129,41 +160,46 @@
 		padding-top: 8rpx;
 		padding-bottom: 0;
 		font-size: 28rpx;
+
 		.top {
 			display: flex;
 			justify-content: space-between;
+
 			.left {
 				display: flex;
 				align-items: center;
+
 				.store {
 					margin: 0 10rpx;
 					font-size: 34rpx;
 					font-weight: bold;
 				}
 			}
+
 			.right {
 				margin-right: 20rpx;
-				.progressBox{
+
+				.progressBox {
 					width: 60rpx;
 					float: right;
-					
+
 				}
-				
-				.border1{
+
+				.border1 {
 					border-radius: 10rpx;
 					background-color: rgba(24, 181, 102, 0.1);
 					color: #18b566;
 					padding: 4rpx 6rpx;
 				}
-				
-				.border2{
+
+				.border2 {
 					border-radius: 10rpx;
 					background-color: rgba(242, 145, 0, 0.1);
 					color: #f29100;
 					padding: 4rpx 6rpx;
 				}
-				
-				.border3{
+
+				.border3 {
 					border-radius: 10rpx;
 					background-color: rgba(130, 132, 138, 0.1);
 					color: #82848a;
@@ -171,22 +207,27 @@
 				}
 			}
 		}
+
 		.item {
 			display: flex;
 			margin: 20rpx 0 0;
+
 			.left {
 				margin-right: 20rpx;
+
 				image {
 					width: 260rpx;
 					height: 190rpx;
 					border-radius: 10rpx;
 				}
 			}
+
 			.content {
 				.title {
 					font-size: 28rpx;
 					line-height: 45rpx;
 				}
+
 				.type {
 					margin: 6rpx 0;
 					font-size: 24rpx;
@@ -199,42 +240,51 @@
 					line-clamp: 3;
 					-webkit-box-orient: vertical;
 				}
+
 				.delivery-time {
 					color: #0081ff;
 					font-size: 24rpx;
 				}
 			}
+
 			.right {
 				margin-left: 10rpx;
 				padding-top: 20rpx;
 				text-align: right;
+
 				.decimal {
 					font-size: 24rpx;
 					margin-top: 4rpx;
 				}
+
 				.number {
 					color: $u-tips-color;
 					font-size: 24rpx;
 				}
 			}
 		}
+
 		.total {
 			margin-top: 20rpx;
 			text-align: right;
 			font-size: 24rpx;
+
 			.total-price {
 				font-size: 32rpx;
 			}
 		}
+
 		.bottom {
 			line-height: 70rpx;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			.btnBox{
+
+			.btnBox {
 				width: 150rpx;
 				display: flex;
 				justify-content: space-between;
+
 				.btn {
 					line-height: 52rpx;
 					width: 140rpx;
@@ -244,6 +294,7 @@
 					text-align: center;
 					color: $u-tips-color;
 				}
+
 				.evaluate {
 					color: $u-type-primary;
 					border-color: $u-type-primary;
@@ -251,7 +302,7 @@
 			}
 		}
 	}
-	
+
 
 	.one_box {
 		width: 750rpx;

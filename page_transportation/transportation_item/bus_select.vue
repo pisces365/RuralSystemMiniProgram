@@ -4,13 +4,6 @@
 			<block slot="backText">返回</block>
 			<block slot="content">公交查询</block>
 		</cu-custom>
-		<view class="contenting">
-			<view class="search-cont">
-				<view class="search">
-					<input type="text" placeholder="  请输入..."/>
-				</view>
-			</view>
-		</view>
 		<view class="nav-box">
 			<view class="" v-for="(item,index) in navList" :class="{active:navIndex==index}" @click="tabClick(index)">
 				{{item}}

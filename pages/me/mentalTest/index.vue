@@ -5,24 +5,26 @@
 			<block slot="backText">返回</block>
 			<block slot="content">答题测试</block>
 		</cu-custom>
-		
+
 		<view class="bannerBox">
 			<image class="ggBox" mode="widthFix" src="http://cdn.zhoukaiwen.com/Banner3.jpg"></image>
 		</view>
-		
+
 		<!-- 答题主页面 -->
 		<view class="padding">
 			<view class="mainBox radius shadow-warp bg-white margin-top relative">
-				<view class="userHeard cu-avatar lg round" style="background-image:url(http://cdn.zhoukaiwen.com/logo.png);"></view>
+				<view class="userHeard cu-avatar lg round"
+					style="background-image:url(http://cdn.zhoukaiwen.com/logo.png);"></view>
 				<view v-show="hasData">
-					<view class="animation-reverse shadow" :class="animation" data-class="slide-rights" v-if="DataList[num].serialNumber">
+					<view class="animation-reverse shadow" :class="animation" data-class="slide-rights"
+						v-if="DataList[num].serialNumber">
 						<view class="mentalTitle text-xl text-black text-bold">
 							<text>{{ DataList[num].serialNumber || '' }}</text>
 							<text>、</text>
 							<text>{{ DataList[num].title || '' }}</text>
 						</view>
-						<view class="mentalList" v-for="(item, index) in DataList[num].itemList" v-bind:class="{ mentalListActive: index == mentalListActive }"
-						 @tap="Toggle(index)">
+						<view class="mentalList" v-for="(item, index) in DataList[num].itemList"
+							v-bind:class="{ mentalListActive: index == mentalListActive }" @tap="Toggle(index)">
 							<view class="indexBox text-shadow">{{ item.number || '' }}</view>
 							{{ item.answer || '' }}
 						</view>
@@ -31,7 +33,7 @@
 					<u-line color="#dddddd"></u-line>
 
 					<view class="margin-top cu-progress radius striped active">
-						<view class="bg-blue" :style="[{ width: loading ? progress + '%' : '' }]">{{  progress }}%</view>
+						<view class="bg-blue" :style="[{ width: loading ? progress + '%' : '' }]">{{ progress }}%</view>
 					</view>
 					<view class="explainMain">本测试仅提供参考，不会作为最终依据</view>
 				</view>
@@ -53,7 +55,7 @@
 		</view>
 
 		<!-- 遮罩层 -->
-		<u-mask :show="show">
+<!-- 		<u-mask :show="show">
 			<view class="warp">
 				<view class="rect" @tap.stop>
 					<view class="closeBtn">
@@ -67,12 +69,14 @@
 					<view class="text-center margin-tb-lg text-gray">{{showMessage}}</view>
 
 					<view style="width: 350rpx; margin: 50rpx auto 0;">
-						<button v-if="isShare != 1" @click="shareBtn" open-type="share" class="cu-btn round bg-blue shadow" style="width: 100%;">分享获得10个积分</button>
-						<button v-if="isShare == 1" open-type="share" class="cu-btn round bg-blue shadow" style="width: 100%;">分享给好友</button>
+						<button v-if="isShare != 1" @click="shareBtn" open-type="share"
+							class="cu-btn round bg-blue shadow" style="width: 100%;">分享获得10个积分</button>
+						<button v-if="isShare == 1" open-type="share" class="cu-btn round bg-blue shadow"
+							style="width: 100%;">分享给好友</button>
 					</view>
 				</view>
 			</view>
-		</u-mask>
+		</u-mask> -->
 	</view>
 </template>
 
@@ -261,7 +265,7 @@
 			Toggle(index) {
 				this.mentalListActive = index;
 				console.log(this.num + 1);
-				console.log('length:',this.DataList.length)
+				console.log('length:', this.DataList.length)
 				this.progress = (100 / this.DataList.length) * (this.num + 1); //进度条
 
 				if (this.progress < 100) {

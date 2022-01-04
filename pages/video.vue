@@ -2,62 +2,51 @@
 <template>
 	<view class="container">
 		<view class="MainBox">
-			<txv-video :vid="videoUrl" playerid="txv1"></txv-video>
-			
-			</video>
-			<view class="cssBox"style="position: relative;">
+			<video :src="getData[0].courseLink" autoplay="false">
 				
+			</video>
+			<view class="cssBox" style="position: relative;">
+
 				<view class="leftBox">
 					<view class="margin-bottom-sm">
-						<text class="text-bold text-xl">第一节课·测试数据</text>
+						<text class="text-bold text-xl">{{getData[0].courseName}}</text>
 					</view>
 					<view>
 						<view class="fl margin-right text-df text-gray">
 							<u-icon name="play-circle" style="margin-right: 5rpx;"></u-icon>
-							<text>11.2w</text>
+							<text>费用：{{getData[0].courseFee}}</text>
 						</view>
-					
+
 						<view class="fl margin-right text-df text-gray">
 							<u-icon name="order" style="margin-right: 5rpx;"></u-icon>
-							<text>1852</text>
+							<text>类别：{{getData[0].courseCategoryName}}</text>
 						</view>
-					
+
+						<view class="fl margin-right text-df text-gray">
+							<u-icon name="order" style="margin-right: 5rpx;"></u-icon>
+							<text>状态：{{getData[0].courseStatus}}</text>
+						</view>
+
 						<view class="fl margin-right text-df text-gray">
 							<u-icon name="clock" style="margin-right: 6rpx;"></u-icon>
-							<text>2020-11-18</text>
+							<text>时间：{{getData[0].courseStartTime}}至{{getData[0].courseEndTime}}</text>
+						</view>
+
+						<view class="fl margin-right text-df text-gray">
+							<u-icon name="clock" style="margin-right: 6rpx;"></u-icon>
+							<text>教师：{{getData[0].courseTeacherName}}</text>
 						</view>
 						<view style="clear: both;"></view>
-					
+
 					</view>
 				</view>
-				
-				<button hover-class='none' class='rightBox' open-type="share">
-					<u-icon label-color="#2979ff" label-size="26" margin-top="12" label-pos="bottom" label="分享一下" name="share" color="#2979ff" size="54"></u-icon>
-				</button>
-				
-				
-
 			</view>
 
 			<view class="cssBox">
 				<view class="margin-bottom-sm">
 					<text class="text-bold text-lg">简介：</text>
 				</view>
-				<text class="text-df">这是一个很有内容的视频这是一个很有内容的视频这是一个很有内容的视频这是一个很有内容的视频这是一个很有内容的视频这是一个很有内容的视频这是一个很有内容的视频</text>
-			</view>
-			
-			<view class="cssBox">
-				<view class="margin-bottom-sm flex justify-between">
-					<text class="text-bold text-lg">选择课程：</text>
-					<text class="text-gray text-df">共5节课/当前播放：第2节</text>
-				</view>
-				<view class="courseBox flex justify-around">
-					<view>第一课 初识uniapp</view>
-					<view class="active">第二课 项目工具及搭建</view>
-					<view>第三课 案例分析</view>
-					<view>第四课 制作项目</view>
-					<view>第五课 打包上线</view>
-				</view>
+				<text class="text-df">{{getData[0].courseDetails}}</text>
 			</view>
 
 			<view class="cssBox">
@@ -65,55 +54,30 @@
 					<text class="text-bold text-lg">相关推荐</text>
 				</view>
 				<view class="cu-card article no-card">
-					
-					<view class="cu-item shadow">
+
+					<view class="cu-item shadow" v-for="(item,index) in projectList" :key="index">
 						<view class="content" style="padding: 0;">
-							<image src="http://cdn.zhoukaiwen.com/web2.jpg" mode="aspectFill"></image>
+							<image :src="item.courseCover" mode="aspectFill"></image>
 							<view class="desc">
 
 								<view class="list_title">
-									测试标题测试标题测试标题
+									{{item.courseName}}
 								</view>
 
-								<view class="list_content"> 折磨生出苦难苦难又会加剧折磨凡间这无穷的循环将有我来终结真正的恩典因不完整而美丽因情感而真诚因脆弱而自由</view>
+								<view class="list_content">{{item.courseDetails}}</view>
 								<view class="flex justify-between">
 									<view class="cu-tag bg-grey light sm round">
 										<u-icon name="play-circle" style="margin-right: 2rpx;"></u-icon>
-										1000阅读量
+										{{item.courseCategoryName}}
 									</view>
 									<view class="cu-tag bg-grey light sm round">
 										<u-icon name="clock" style="margin-right: 5rpx;"></u-icon>
-										2020-11-03
+										{{item.courseStartTime}}至{{item.courseEndTime}}
 									</view>
 								</view>
 							</view>
 						</view>
 					</view>
-					
-					<view class="cu-item shadow">
-						<view class="content" style="padding: 0;">
-							<image src="http://cdn.zhoukaiwen.com/web2.jpg" mode="aspectFill"></image>
-							<view class="desc">
-					
-								<view class="list_title">
-									标题标题标题标题
-								</view>
-					
-								<view class="list_content"> 折磨生出苦难苦难又会加剧折磨凡间这无穷的循环将有我来终结真正的恩典因不完整而美丽因情感而真诚因脆弱而自由</view>
-								<view class="flex justify-between">
-									<view class="cu-tag bg-grey light sm round">
-										<u-icon name="play-circle" style="margin-right: 2rpx;"></u-icon>
-										1000阅读量
-									</view>
-									<view class="cu-tag bg-grey light sm round">
-										<u-icon name="clock" style="margin-right: 5rpx;"></u-icon>
-										2020-11-03
-									</view>
-								</view>
-							</view>
-						</view>
-					</view>
-					
 				</view>
 			</view>
 		</view>
@@ -124,6 +88,10 @@
 </template>
 
 <script>
+	import {
+		selectAllCourses,
+		selectCourseById
+	} from '@/apis/education_apis.js'
 	export default {
 		components: {
 
@@ -131,26 +99,53 @@
 		data() {
 			return {
 				videoUrl: 'x3032spkh1m',
-				getData:[
-					{
-						title: 'uniapp开发',
-						studyNum: '335',
-						review: '35',
-						time: '2020-12-11',
-						synopsis: 'uni-app是一个使用Vue.js开发跨平台个人文库应用的前端框架,开发者编写一套代码,可编译到的iOS,安卓,H5,小程序等多个平台。',
-						item: [
-							{
-								title: "第一课",
-								name: "初识uniapp",
-								vidUrl: 'x3032spkh1m'
-							}
-						]
-					}
-				]
+				getData: [{
+
+				}],
+				projectList: []
 			}
 		},
-		onLoad() {
-			
+		onLoad(option) {
+			var that = this;
+			console.log(option.courseId);
+			var data = {
+				courseId: option.courseId
+			}
+			selectCourseById(data).then((res) => {
+				if (res.statusCode == "200") {
+					console.log(res.data);
+					that.getData = res.data;
+					uni.hideLoading();
+				} else {
+					uni.hideLoading();
+					uni.showToast({
+						title: '获取失败',
+						duration: 2000,
+						icon: 'error'
+					});
+				}
+				that.$forceUpdate();
+			})
+			console.log(this.projectList)
+			var data = {}
+			var that = this;
+			selectAllCourses(data).then((res) => {
+				if (res.statusCode == "200") {
+					console.log(res.data);
+					for (var i = 0; i < 2; ++i) {
+						var random = Math.floor(Math.random() * 5);
+						that.projectList.push(res.data[random]);
+					}
+					uni.hideLoading();
+				} else {
+					uni.hideLoading();
+					uni.showToast({
+						title: '获取失败',
+						duration: 2000,
+						icon: 'error'
+					});
+				}
+			})
 		},
 		// 分享小程序
 		onShareAppMessage(res) {
@@ -187,7 +182,8 @@
 		background-color: #FFFFFF;
 		margin-bottom: 15rpx;
 	}
-	.rightBox{
+
+	.rightBox {
 		width: 150rpx;
 		height: 100%;
 		position: absolute;
@@ -218,13 +214,14 @@
 		font-size: 28rpx;
 		color: #888;
 	}
-	
-	.courseBox{
-		    display: flex;
-		    flex-wrap: wrap;
-		    justify-content: space-between;
-			margin-left: -10px;
-		view{
+
+	.courseBox {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-left: -10px;
+
+		view {
 			width: 240rpx;
 			height: 58rpx;
 			border: 2rpx solid #909399;
@@ -232,7 +229,7 @@
 			line-height: 58rpx;
 			-webkit-border-radius: 6px;
 			border-radius: 12rpx;
-			margin:10rpx 0 20rpx;
+			margin: 10rpx 0 20rpx;
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
 			-webkit-line-clamp: 1;
@@ -242,22 +239,26 @@
 			color: #909399;
 			padding: 0 6rpx;
 		}
-		.active{
+
+		.active {
 			border: 2rpx solid #2979ff;
 			background-color: #2979ff;
 			color: #FFFFFF;
 		}
 	}
+
 	.courseBox::after {
-	    content: "";
-		flex: auto; 
+		content: "";
+		flex: auto;
 	}
+
 	.courseBox>view {
 		margin-left: 10px;
 		margin-bottom: 10px;
 		width: -webkit-calc((100% - 10px*3)/ 3);
 		width: calc((100% - 10px*3)/ 3);
 	}
+
 	button::after {
 		border: none;
 		padding: 0;

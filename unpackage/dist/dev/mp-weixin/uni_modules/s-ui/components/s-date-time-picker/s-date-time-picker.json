@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "s-picker": "/uni_modules/s-ui/components/s-picker/s-picker"
+  }
+}

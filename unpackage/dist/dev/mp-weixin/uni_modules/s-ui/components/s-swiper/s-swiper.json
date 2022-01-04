@@ -1,0 +1,9 @@
+{
+  "componentGenerics": {
+    "scoped-slots-default": true
+  },
+  "component": true,
+  "usingComponents": {
+    "s-image": "/uni_modules/s-ui/components/s-image/s-image"
+  }
+}

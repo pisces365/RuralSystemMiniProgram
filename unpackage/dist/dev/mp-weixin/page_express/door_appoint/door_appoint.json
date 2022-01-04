@@ -1,0 +1,13 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "fui-input": "/node-modules/firstui-uni/firstui/fui-input/fui-input",
+    "fui-radio-group": "/node-modules/firstui-uni/firstui/fui-radio-group/fui-radio-group",
+    "fui-label": "/node-modules/firstui-uni/firstui/fui-label/fui-label",
+    "fui-radio": "/node-modules/firstui-uni/firstui/fui-radio/fui-radio",
+    "fui-row": "/node-modules/firstui-uni/firstui/fui-row/fui-row",
+    "fui-col": "/node-modules/firstui-uni/firstui/fui-col/fui-col",
+    "fui-button": "/node-modules/firstui-uni/firstui/fui-button/fui-button",
+    "s-date-time-picker": "/uni_modules/s-ui/components/s-date-time-picker/s-date-time-picker"
+  }
+}

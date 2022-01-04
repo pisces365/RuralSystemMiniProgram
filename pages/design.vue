@@ -4,13 +4,12 @@
 			<block slot="backText">返回</block>
 			<block slot="content">{{pageName}}</block>
 		</cu-custom>
-		
-		<u-notice-bar mode="horizontal" type="primary" :list="listBar"></u-notice-bar>
-		
-		<u-waterfall v-model="flowList" ref="uWaterfall">
+
+		<!-- <u-notice-bar mode="horizontal" type="primary" :list="listBar"></u-notice-bar> -->
+
+<!-- 		<u-waterfall v-model="flowList" ref="uWaterfall">
 			<template v-slot:left="{leftList}">
 				<view class="demo-warter" v-for="(item, index) in leftList" :key="index" @click="seeImg(item.image)">
-					<!-- 警告：微信小程序中需要hx2.8.11版本才支持在template中结合其他组件，比如下方的lazy-load组件 -->
 					<u-lazy-load threshold="-450" border-radius="10" :image="item.image" :index="index"></u-lazy-load>
 					<view class="demo-title">
 						{{item.title}}
@@ -26,7 +25,6 @@
 					<view class="demo-shop">
 						作品来源：{{item.shop}}
 					</view>
-					<!-- <u-icon name="close-circle-fill" color="#fa3534" size="34" class="u-close" @click="remove(item.id)"></u-icon> -->
 				</view>
 			</template>
 			<template v-slot:right="{rightList}">
@@ -46,11 +44,9 @@
 					<view class="demo-shop">
 						作品来源：{{item.shop}}
 					</view>
-					<!-- <u-icon name="close-circle-fill" color="#fa3534" size="34" class="u-close" @click="remove(item.id)"></u-icon> -->
 				</view>
 			</template>
-		</u-waterfall>
-		<u-loadmore bg-color="rgb(240, 240, 240)" :status="loadStatus" @loadmore="addRandomData"></u-loadmore>
+		</u-waterfall> -->
 	</view>
 </template>
 
@@ -59,8 +55,8 @@
 	export default {
 		data() {
 			return {
-				pageName:'全部设计',
-				listBar:[
+				pageName: '全部设计',
+				listBar: [
 					'APP/PC端设计图均有实体项目，如有需要请联系作者。注：Logo模版均有版权保护，请勿盗用，违者必究！'
 				],
 				loadStatus: 'loadmore',
@@ -70,16 +66,16 @@
 		},
 		onLoad(option) {
 			console.log(option.type)
-			if(option.type == 0){
+			if (option.type == 0) {
 				this.list = imgData[0].appImg;
 				this.pageName = 'APP设计';
-			}else if(option.type == 1){
+			} else if (option.type == 1) {
 				this.list = imgData[0].pcImg;
 				this.pageName = 'PC端设计';
-			}else if(option.type == 2){
+			} else if (option.type == 2) {
 				this.list = imgData[0].logoImg;
 				this.pageName = 'Logo设计';
-			}else{
+			} else {
 				this.list = imgData[0].posterImg;
 				this.pageName = '海报设计';
 			};
@@ -106,7 +102,7 @@
 			remove(id) {
 				this.$refs.uWaterfall.remove(id);
 			},
-			seeImg(imgUrl){
+			seeImg(imgUrl) {
 				// console.log(imgUrl)
 				// 预览图片
 				uni.previewImage({

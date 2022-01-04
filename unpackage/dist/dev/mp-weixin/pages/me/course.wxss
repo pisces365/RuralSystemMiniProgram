@@ -13,6 +13,14 @@
  */
 /* 水平间距 */
 /* 水平间距 */
+/*
+ * @Description: s-ui 组件scss变量
+ * @Author: 无痕
+ * @Email: 350801869@qq.com
+ * @Date: 2021-11-25 13:39:57
+ * @LastEditTime: 2021-11-26 14:00:49
+ * @LastEditors: 无痕
+ */
 /* 颜色变量 */
 /* 行为相关颜色 */
 /* 文字基本颜色 */
@@ -48,6 +56,14 @@ page.data-v-1ac58349 {
  */
 /* 水平间距 */
 /* 水平间距 */
+/*
+ * @Description: s-ui 组件scss变量
+ * @Author: 无痕
+ * @Email: 350801869@qq.com
+ * @Date: 2021-11-25 13:39:57
+ * @LastEditTime: 2021-11-26 14:00:49
+ * @LastEditors: 无痕
+ */
 /* 颜色变量 */
 /* 行为相关颜色 */
 /* 文字基本颜色 */
@@ -152,13 +168,13 @@ page.data-v-1ac58349 {
   align-items: center;
 }
 .order .bottom .btnBox.data-v-1ac58349 {
-  width: 150rpx;
+  width: 350rpx;
   display: flex;
   justify-content: space-between;
 }
 .order .bottom .btnBox .btn.data-v-1ac58349 {
   line-height: 52rpx;
-  width: 140rpx;
+  width: 440rpx;
   border-radius: 12rpx;
   border: 2rpx solid #909399;
   font-size: 26rpx;

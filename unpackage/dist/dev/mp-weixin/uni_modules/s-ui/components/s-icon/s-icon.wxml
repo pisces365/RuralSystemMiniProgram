@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['handleClick',['$event']]]]]}}" class="{{['s-icon','data-v-411a563c',c_class]}}" style="{{(c_style)}}" bindtap="__e"><block wx:if="{{isImage}}"><image class="s-icon__image data-v-411a563c" src="{{name}}" mode="{{mode}}"></image></block></view>

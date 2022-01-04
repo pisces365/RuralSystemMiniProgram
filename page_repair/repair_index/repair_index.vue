@@ -14,41 +14,44 @@
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="page-box">
-							<navigator url="../repair_details/repair_details" class="order" v-for="(res, index) in dataList1" :key="res.id">
+							<navigator :url="'../repair_details/repair_details?fixDepartmentId='+res.fixDepartmentId+'&fixDepartmentName='+res.fixDepartmentName+'&fixDetails='+res.fixDetails+'&fixExpectTime='+res.fixExpectTime+'&fixId='+res.fixId+'&fixLaborCost='+res.fixLaborCost+'&fixMaterial='+res.fixMaterial+'&fixMaterialCost='+res.fixMaterialCost+'&fixOrderId='+res.fixOrderId+'&fixPicture='+res.fixPicture+'&fixStatus='+res.fixStatus+'&fixSubmitTime='+res.fixSubmitTime+'&fixTimeline='+res.fixTimeline+'&fixType='+res.fixType+'&fixUserAddress='+res.fixUserAddress+'&fixUserDoor='+res.fixUserDoor+'&fixUserId='+res.fixUserId+'&fixUserName='+res.fixUserName+'&fixUserPhone='+res.fixUserPhone+'&fixWorkerId='+res.fixWorkerId+'&fixWorkerName='+res.name+'&fixWorkerPhone='+res.fixWorkerPhone" class="order" v-for="(res, index) in dataList1" :key="index">
 								<view class="top">
 									<view class="left">
 										<uni-text class="cuIcon-titles text-blue"></uni-text>
-										<view class="store">{{ res.title }}</view>
+										<view class="store">{{ res.fixType }}</view>
 										<!-- <u-icon name="arrow-right" color="rgb(203,203,203)" :size="26"></u-icon> -->
 									</view>
 									<view class="right">
-										<view v-if="res.status == 1" class="border2">
-											进行中
+										<view v-if="res.fixStatus == 1" class="border1">
+											工单已创建
 										</view>
-										<view v-if="res.status == 2" class="border1">
-											即将开始
+										<view v-if="res.fixStatus == 2" class="border2">
+											已派单
 										</view>
-										<view v-if="res.status == 3" class="border3">
-											已结束
+										<view v-if="res.fixStatus == 3" class="border3">
+											已派工
+										</view>
+										<view v-if="res.fixStatus == 4" class="border4">
+											已完成
 										</view>
 									</view>
 								</view>
-								<view class="item" v-for="(item, index) in res.content" :key="index">
+								<view class="item">
 									<view class="left">
-										<image :src="item.imgUrl" mode="aspectFill"></image>
+										<image src="http://p1362.bvimg.com/10465/b7a23d05f09c09ae.jpg" mode="aspectFill"></image>
+										<!-- <image :src="res.fixPicture[0]" mode="aspectFill"></image> -->
 									</view>
 									<view class="content">
 										<view class="" style="display: flex;">
-											<view class="title u-line-2 text-bold" style="flex:3">{{ item.position }}</view>
-											<view class="title u-line-2 text-bold" style="flex:1">{{ item.person }}</view>
+											<view class="title u-line-2 text-bold" style="flex:3">{{ res.fixUserAddress }}</view>
+											<view class="title u-line-2 text-bold" style="flex:1">{{ res.fixUserName }}</view>
 										</view>
 												
-										<view class="type">{{ item.details }}</view>
-										<view class="delivery-time">{{item.date}} {{ item.time }}</view>
+										<view class="type">{{ res.fixDetails }}</view>
+										<view class="delivery-time">{{res.fixSubmitTime}}</view>
 									</view>
 								</view>
 							</navigator>
-							<u-loadmore :status="loadStatus[0]" bgColor="#f2f2f2"></u-loadmore>
 						</view>
 					</scroll-view>
 				</swiper-item>
@@ -56,41 +59,44 @@
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="page-box">
-							<navigator url="../repair_details/repair_details" class="order" v-for="(res, index) in dataList2" :key="res.id">
+							<navigator :url="'../repair_details/repair_details?fixDepartmentId='+res.fixDepartmentId+'&fixDepartmentName='+res.fixDepartmentName+'&fixDetails='+res.fixDetails+'&fixExpectTime='+res.fixExpectTime+'&fixId='+res.fixId+'&fixLaborCost='+res.fixLaborCost+'&fixMaterial='+res.fixMaterial+'&fixMaterialCost='+res.fixMaterialCost+'&fixOrderId='+res.fixOrderId+'&fixPicture='+res.fixPicture+'&fixStatus='+res.fixStatus+'&fixSubmitTime='+res.fixSubmitTime+'&fixTimeline='+res.fixTimeline+'&fixType='+res.fixType+'&fixUserAddress='+res.fixUserAddress+'&fixUserDoor='+res.fixUserDoor+'&fixUserId='+res.fixUserId+'&fixUserName='+res.fixUserName+'&fixUserPhone='+res.fixUserPhone+'&fixWorkerId='+res.fixWorkerId+'&fixWorkerName='+res.name+'&fixWorkerPhone='+res.fixWorkerPhone" class="order" v-for="(res, index) in dataList2" :key="index">
 								<view class="top">
 									<view class="left">
 										<uni-text class="cuIcon-titles text-blue"></uni-text>
-										<view class="store">{{ res.title }}</view>
+										<view class="store">{{ res.fixType }}</view>
 										<!-- <u-icon name="arrow-right" color="rgb(203,203,203)" :size="26"></u-icon> -->
 									</view>
 									<view class="right">
-										<view v-if="res.status == 1" class="border2">
-											进行中
+										<view v-if="res.fixStatus == 1" class="border1">
+											工单已创建
 										</view>
-										<view v-if="res.status == 2" class="border1">
-											即将开始
+										<view v-if="res.fixStatus == 2" class="border2">
+											已派单
 										</view>
-										<view v-if="res.status == 3" class="border3">
-											已结束
+										<view v-if="res.fixStatus == 3" class="border3">
+											已派工
+										</view>
+										<view v-if="res.fixStatus == 4" class="border4">
+											已完成
 										</view>
 									</view>
 								</view>
-								<view class="item" v-for="(item, index) in res.content" :key="index">
+								<view class="item">
 									<view class="left">
-										<image :src="item.imgUrl" mode="aspectFill"></image>
+										<image src="http://p1362.bvimg.com/10465/b7a23d05f09c09ae.jpg" ></image>
+										<!-- <image :src="res.fixPicture[0]" mode="aspectFill"></image> -->
 									</view>
 									<view class="content">
 										<view class="" style="display: flex;">
-											<view class="title u-line-2 text-bold" style="flex:3">{{ item.position }}</view>
-											<view class="title u-line-2 text-bold" style="flex:1">{{ item.person }}</view>
+											<view class="title u-line-2 text-bold" style="flex:3">{{ res.fixUserAddress }}</view>
+											<view class="title u-line-2 text-bold" style="flex:1">{{ res.fixUserName }}</view>
 										</view>
 				
-										<view class="type">{{ item.details }}</view>
-										<view class="delivery-time">{{item.date}} {{ item.time }}</view>
+										<view class="type">{{ res.fixDetails}}</view>
+										<view class="delivery-time">{{res.fixSubmitTime}}</view>
 									</view>
 								</view>
 							</navigator>
-							<u-loadmore :status="loadStatus[1]" bgColor="#f2f2f2"></u-loadmore>
 						</view>
 					</scroll-view>
 				</swiper-item>
@@ -109,12 +115,16 @@
 
 <script>
 	import apply from '../repair_apply/repair_apply.vue'
+	import {
+		allFixDetailsByUserId,selectUserByAccount,allFixDetails
+	} from '@/apis/repair_apis.js'
 export default {
 	components: {
 		apply
 	},
 	data() {
 		return {
+			imgUrl: "http://p1362.bvimg.com/10465/b7a23d05f09c09ae.jpg",
 			percent: 50,
 			activeColor: '#0081ff',
 			striped: false,
@@ -126,40 +136,8 @@ export default {
 				'https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg',
 				'https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg'
 			],
-			dataList1: [
-				{
-					id: 1,
-					title: '热水器不能制热了',
-					status: 1,
-					content: [
-						{
-							imgUrl: 'http://p1362.bvimg.com/10465/b7a23d05f09c09ae.jpg',
-							position: 'xx村洪湖街18号',
-							person: '张**',
-							details: '热水器突然就不能制热了，根本没法洗澡，都是冷水！',
-							date: '2021年10月01日',
-							time: '18:00:00'
-						}
-					]
-				}
-			],
-			dataList2: [
-				{
-					id: 1,
-					title: '热水器不能制热了',
-					status: 1,
-					content: [
-						{
-							imgUrl: 'http://p1362.bvimg.com/10465/b7a23d05f09c09ae.jpg',
-							position: 'xx村洪湖街18号',
-							person: '张**',
-							details: '热水器突然就不能制热了，根本没法洗澡，都是冷水！',
-							date: '2021年10月01日',
-							time: '18:00:00'
-						}
-					]
-				}
-			],
+			dataList1: [],
+			dataList2: [],
 			list: [
 				{
 					name: '报修广场'
@@ -176,10 +154,72 @@ export default {
 			tabsHeight: 0,
 			dx: 0,
 			loadStatus: ['loadmore','loadmore','loadmore','loadmore'],
+			account: 'user1',
+			// account: uni.getStorageSync('userInfo').nickName,
+			userId: ''
 		};
 	},
-	onLoad() {
-		
+	mounted() {
+		var data = {account: this.account};
+		selectUserByAccount(data).then((res) => {
+			console.log("onLoad: "+data)
+			if(res.statusCode == "200")
+			{
+				this.userId = res.data
+				console.log(res.data);
+				uni.hideLoading();
+			}
+			else
+			{
+				console.log('获取失败')
+				uni.hideLoading();
+				uni.showToast({
+					title: '获取失败',
+					duration: 2000,
+					icon: 'error'
+				})
+			}
+			var UserId = {fixUserId: this.userId};
+			allFixDetailsByUserId(UserId).then((res) => {
+				console.log(data)
+				if(res.statusCode == "200")
+				{
+					this.dataList2 = res.data
+					console.log(res.data);
+					uni.hideLoading();
+				}
+				else
+				{
+					console.log('获取失败')
+					uni.hideLoading();
+					uni.showToast({
+						title: '获取失败',
+						duration: 2000,
+						icon: 'error'
+					})
+				}
+			})
+			
+			allFixDetails().then((res) => {
+				console.log(data)
+				if(res.statusCode == "200")
+				{
+					this.dataList1 = res.data
+					console.log(res.data);
+					uni.hideLoading();
+				}
+				else
+				{
+					console.log('获取失败')
+					uni.hideLoading();
+					uni.showToast({
+						title: '获取失败',
+						duration: 2000,
+						icon: 'error'
+					})
+				}
+			})
+		})
 	},
 	methods: {
 		goClass(){
@@ -194,13 +234,13 @@ export default {
 			if(this.current != 2) {
 				this.loadStatus.splice(this.current,1,"loading")
 				setTimeout(() => {
-					this.getOrderList(this.current);
+					// this.getOrderList(this.current);
 				}, 1200);
 			}
 		},
 		change(index) {
 			this.swiperCurrent = index;
-			this.getOrderList(index);
+			// this.getOrderList(index);
 		},
 		transition({ detail: { dx } }) {
 			this.$refs.tabs.setDx(dx);
@@ -268,6 +308,12 @@ page {
 			}
 			
 			.border3{
+				border-radius: 10rpx;
+				background-color: rgba(235, 80, 126, 0.1);
+				color: #eb507e;
+				padding: 4rpx 6rpx;
+			}
+			.border4{
 				border-radius: 10rpx;
 				background-color: rgba(130, 132, 138, 0.1);
 				color: #82848a;

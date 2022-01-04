@@ -24,7 +24,7 @@
 						<text>联系人姓名</text>
 					</view>
 					<view class="repair-input">
-						<input class="uni-input" name="name" placeholder="姓名" />
+						<input class="uni-input" name="name" placeholder="姓名" v-model="fixUserName"/>
 					</view>
 				</view>
 			</view>
@@ -34,7 +34,7 @@
 						联系电话
 					</view>
 					<view class="repair-input">
-						<input class="uni-input" name="phone" placeholder="电话" />
+						<input class="uni-input" name="phone" placeholder="电话" v-model="fixUserPhone"/>
 					</view>
 				</view>
 			</view>
@@ -57,7 +57,7 @@
 						门牌号
 					</view>
 					<view class="repair-input ">
-						<input class="uni-input" name="roomNum" placeholder="详细地址,如:1号楼1单元101" />					
+						<input class="uni-input" name="roomNum" placeholder="详细地址,如:1号楼1单元101" v-model="fixUserDoor"/>					
 					</view>
 				</view>
 			</view>
@@ -91,7 +91,7 @@
 						问题类型
 					</view>
 					<view class="repair-input">
-						<picker mode="multiSelector" class="uni-input" @change="bindPickerChange" @columnchange="bindIndexChange" :range="problemType" style="position: relative;">
+						<picker mode="multiSelector" class="uni-input" @change="bindPickerChange" @columnchange="bindIndexChange" :range="problemType" style="position: relative;" v-model="fixType">
 							<label class="">{{problemType[0][typeIndex]}}-{{problemItems[typeIndex][typeItems]}}</label>
 						</picker>
 					</view>
@@ -105,7 +105,7 @@
 				</view>
 				<view class="repair-item r7" >
 					<view class="repair-input" style="margin-left: 100rpx">
-						<textarea class="uni-input"  placeholder="详细描述遇到的问题" style="float: right; width: 100%;"/>
+						<textarea class="uni-input"  placeholder="详细描述遇到的问题" style="float: right; width: 100%;" v-model="fixDetails"/>
 					</view>
 				</view>
 			</view>
@@ -115,7 +115,7 @@
 						照片/视频
 					</view>
 				</view>
-				<view class="repair-item r9">
+<!-- 				<view class="repair-item r9">
 					<view class="repair-input repair-input-image" style="margin-left: 90rpx;">
 
 						<view v-for="(item , index) in imgArr" :key="index" style="position: relative;">
@@ -125,6 +125,20 @@
 						<view v-if="get_imgArrLength()" class="repair-image add-image" @click="chooseImg">
 							
 						</view>
+					</view>
+				</view> -->
+				<view style="display: block; margin-left: 20rpx;">
+					<view v-for="(item , index) in imgArr" :key="index"
+						style="position: relative; display: inline-block; margin-right: 20rpx; width: 120rpx; height: 120rpx;">
+						<image src="http://p1362.bvimg.com/10465/811d84ee9403038c.png" mode="aspectFit"
+							@click="deleteImg(index)"
+							style=" position: absolute; top:-10rpx; left: -10rpx; z-index: 100; width: 35rpx; height: 35rpx;">
+						</image>
+						<image :src="item" mode="aspectFill" class="uni-input repair-image"
+							style="padding: 0; display: inline-block;"></image>
+					</view>
+					<view v-if="get_imgArrLength()" class="repair-image add-image" @click="chooseImg"
+						style="position: relative; display: inline-block;">
 					</view>
 				</view>
 			</view>
@@ -146,13 +160,19 @@
 </template>
 
 <script>
+	import {
+		addFixRequest,selectUserByAccount
+	} from '@/apis/repair_apis.js'
 	export default {
 		data() {
+			
 			const currentDate = this.getDate({
 			            format: true
 			        })
 			const currentTime = this.getTime('load')
 			return {
+				account: 'user1',
+				// account: uni.getStorageSync('userInfo').nickName,
 				repair_address_main:"请选择",
 				problemType:[
 					['请选择种类','水电','泥木','通讯','园林绿化'],
@@ -167,26 +187,38 @@
 				],
 				typeIndex:0,
 				typeItems:0,
-				imgArr:[],
+				imgArr: [],
 				showFloatWindow:false,
 				time: currentTime,
-				date: currentDate
-				
+				date: currentDate,
+				fixUserDoor: '',
+				fixUserName: '',
+				fixUserPhone: '' ,
+				fixDetails: '',
+				fixType: '',
+				userId: ''
 			}
 		},
-		computed: {
-		  //       startDate() {
-		  //           return this.getDate('start');
-		  //       },
-		  //       endDate() {
-		  //           return this.getDate('end');
-		  //       },
-				// startTime() {
-				//     return this.getTime('start');
-				// },
-				// endTime() {
-				//     return this.getTime('end');
-				// }
+		mounted() {
+			var data = {account: this.account};
+			selectUserByAccount(data).then((res) => {
+				if(res.statusCode == "200")
+				{
+					this.userId = res.data
+					console.log(res.data);
+					uni.hideLoading();
+				}
+				else
+				{
+					console.log('获取失败')
+					uni.hideLoading();
+					uni.showToast({
+						title: '获取失败',
+						duration: 2000,
+						icon: 'error'
+					})
+				}
+			})
 		},
 		methods: {
 			startDate: function() {
@@ -337,20 +369,79 @@
 			}
 			,
 			submit() {
-
-					let that = this;
-					uni.showModal({
-					    title: '提示',
-					    content: '是否报修？',
-					    success: function (res) {
-							if(res.confirm)
-					        uni.navigateBack();
-					    },
-						fail: function (res) {
+				let that = this;
+				uni.showModal({
+					title: '提示',
+					content: '是否报修？',
+					success: function (res) {
+						if(res.confirm){
+							var fixPicture = "";
+							console.log("abababababab",that.imgArr);
+							var i = 0;
+							var flag = that.imgArr.length;
+							for(; i<that.imgArr.length; ++i)
+							{
+								console.log("1353",that.imgArr[i])
+								uni.uploadFile({
+									url: 'http://112.124.35.32:8081/xiangliban/api/imgUpload',
+									filePath: that.imgArr[i],
+									name: 'file',
+									formData: {  // 其他的formdata参数
+										
+									},
+									success: function(uploadFileRes) {
+										console.log("upload",uploadFileRes)
+										fixPicture += uploadFileRes.data + '#';
+										console.log(fixPicture); 
+										flag--;
+										if( flag == 0)
+										{
+											console.log("last"); 
+											console.log(that.data);
+											var data = {
+												fixDetails: that.fixDetails,
+												fixExpectTime: that.date+" "+that.time,
+												fixPicture: fixPicture,
+												fixType: that.problemType[0][that.typeIndex]+" "+that.problemType[1][that.typeItems],
+												fixUserAddress: that.repair_address_main,
+												fixUserDoor: that.fixUserDoor,
+												fixUserId: that.userId,
+												fixUserName: that.fixUserName,
+												fixUserPhone: that.fixUserPhone
+											};
+											console.log("test",data)
+											addFixRequest(data).then((res) => {
+												if(res.statusCode == "200")
+												{
+													console.log(res.data);
+													uni.hideLoading();
+												}
+												else
+												{
+													console.log('获取失败')
+													uni.hideLoading();
+													uni.showToast({
+														title: '获取失败',
+														duration: 2000,
+														icon: 'error'
+													})
+												}
+											})
+										}
+									}
+								})
+							}
+							uni.navigateBack();
+						}
+						else if(res.cancel){
 							
 						}
-					});
-
+						
+					},
+					fail: function (res) {
+						
+					}
+				});
 			},
 			goBack() {
 				uni.navigateBack();
@@ -462,15 +553,15 @@
 		flex: 4;
 	}
 	
-	.repair-input .uni-input {
-		/* border: 0.5px solid #A6A7A6; */
+/* 	.repair-input .uni-input {
+
 		border-radius: 12rpx;
 		padding: 10rpx;
 		font-size: 32rpx;
 		color: #A6A7A6;
 		line-height: 40rpx;
-		/* margin-right: 20rpx; */
-	}
+
+	} */
 	
 	
 	.repair-input-image view {

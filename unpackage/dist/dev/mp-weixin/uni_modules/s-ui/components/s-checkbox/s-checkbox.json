@@ -1,0 +1,11 @@
+{
+  "componentGenerics": {
+    "scoped-slots-default": true,
+    "scoped-slots-icon": true,
+    "scoped-slots-label": true
+  },
+  "component": true,
+  "usingComponents": {
+    "s-icon": "/uni_modules/s-ui/components/s-icon/s-icon"
+  }
+}

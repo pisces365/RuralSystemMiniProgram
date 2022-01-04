@@ -1,4 +1,6 @@
 {
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {
+    "s-popup": "/uni_modules/s-ui/components/s-popup/s-popup"
+  }
 }

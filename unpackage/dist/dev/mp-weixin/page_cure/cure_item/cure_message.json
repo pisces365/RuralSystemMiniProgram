@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "fui-input": "/node-modules/firstui-uni/firstui/fui-input/fui-input",
+    "s-checkbox": "/uni_modules/s-ui/components/s-checkbox/s-checkbox"
+  }
+}

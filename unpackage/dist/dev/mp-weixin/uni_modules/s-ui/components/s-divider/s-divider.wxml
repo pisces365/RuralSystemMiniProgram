@@ -1,0 +1,1 @@
+<view class="{{['s-divider','data-v-72cadefc',c_class]}}" style="{{(custom_style)}}"><slot></slot></view>

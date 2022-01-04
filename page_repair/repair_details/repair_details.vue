@@ -8,8 +8,8 @@
 		<view>
 			<view class="number-bar">
 				<view class="number-bar-text">
-					<view class="number-bar-1">热水器不能制热了</view>
-					<view class="number-bar-2">编号：20190606</view>
+					<view class="number-bar-1">{{dataList.fixType}}</view>
+					<view class="number-bar-2">编号：{{fixOrderId}}</view>
 					<view class="number-bar-3">
 						保存单号
 					</view>
@@ -25,102 +25,99 @@
 					
 					</view>
 					<view class="right-panel">
-						<view class="process">
+						<view v-if="timeLine[3].eventNode == '已完成'" class="process">
 							<view class="process-top">
 								<view class="process-type">
 									完工
 								</view>
 								<view class="process-date">
-									2021.9.29 15:31:00
+									{{timeLine[3].eventNode}}&nbsp&nbsp&nbsp{{timeLine[3].timeNode}}
 								</view>
 								<view class="process-nophone">
 									
 								</view>
 							</view>
 							<view class="process-item i-goods">
-								水管/个*1
+								{{fixMaterial}}
 							</view>
 							<view class="process-item i-price">
-								工时费：2.30元<br>
-								物料费：12.00元
+								工时费：{{fixLaborCost}}元<br>
+								物料费：{{fixMaterialCost}}元
 							</view>
 							<view class="process-border-point">
 
 							</view>							
 						</view>
 						
-						<view class="process">
+						<view v-if="timeLine[2].eventNode == '进行中,工作人员已出发'" class="process">
 							<view class="process-top">
 								<view class="process-type">
 									派工
 								</view>
 								<view class="process-date">
-									2021.9.29 15:31:00
+									进行中&nbsp&nbsp&nbsp{{timeLine[2].timeNode}}
 								</view>
 								<view class="process-phone">
 									
 								</view>
 							</view>
 							<view class="process-item i-people">
-								张师傅
+								{{fixWorkerName}}
 							</view>
 							<view class="process-item i-group">
-								水电维修组
+								{{fixDepartmentName}}
 							</view>
 							<view class="process-border-point">
 							
 							</view>
 						</view>
-						<view class="process">
+						<view v-if="timeLine[1].eventNode == '已派单'" class="process">
 							<view class="process-top">
 								<view class="process-type">
 									受理
 								</view>
 								<view class="process-date">
-									2021.9.29 15:31:00
+									{{timeLine[1].eventNode}}&nbsp&nbsp&nbsp{{timeLine[1].timeNode}}
 								</view>
 								<view class="process-phone">
 									
 								</view>
 							</view>
-							<view class="process-item i-people">
-								水电维修1组
-							</view>
 							<view class="process-item i-group">
-								乡村水电维修部
+								{{fixDepartmentName}}
 							</view>
 							<view class="process-border-point">
 							
 							</view>
 						</view>
-						<view class="process">
+						<view v-if="timeLine[0].eventNode == '工单被创建'" class="process">
 						<view class="process-top">
 							<view class="process-type">
 								申报
 							</view>
 							<view class="process-date">
-								2021.9.29 15:31:00
+								{{timeLine[0].eventNode}}&nbsp&nbsp&nbsp{{timeLine[0].timeNode}}
 							</view>
 							<view class="process-nophone">
 								
 							</view>
 						</view>
 						<view class="process-item i-people">
-							张**
+							{{fixUserName}}
 						</view>
 						<view class="process-item i-type">
-							水电-热水器
+							{{fixType}}
 						</view>
 						<view class="process-item i-address">
-							xx村洪湖街18号
+							{{fixUserAddress}}&nbsp&nbsp&nbsp{{fixUserDoor}}
 						</view>
 						<view class="process-item i-problem">
-							热水器突然就不能制热了，根本没法洗澡，都是冷水！
+							{{fixDetails}}
 						</view>
 						<view class="process-item i-photo">
 							<view class="items-image-box">
 								<view v-for="(item , index) in imgArr" :key="index" style="position: relative;" class="items-image">
-									<image :src="item.url" mode="aspectFill" class="repair-image" style="padding: 0;" ></image>
+									<image :src="item" mode="aspectFill" class="repair-image" style="padding: 0;" ></image>
 								</view>
 							</view>
 						</view>
@@ -135,19 +132,62 @@
 </template>
 
 <script>
+	import {
+		analysisTimeline
+	} from '@/apis/repair_apis.js'
+	
 	export default {
+		onLoad: function (options) {
+		    this.fixUserId=options.fixUserId
+			this.fixDepartmentId=options.fixDepartmentId
+			this.fixDepartmentName=options.fixDepartmentName
+			this.fixDetails=options.fixDetails
+			this.fixExpectTime=options.fixExpectTime
+			this.fixId=options.fixId
+			this.fixLaborCost=options.fixLaborCost
+			this.fixMaterial=options.fixMaterial
+			this.fixMaterialCost=options.fixMaterialCost
+			this.fixOrderId=options.fixOrderId
+			this.fixPicture=options.fixPicture
+			this.fixStatus=options.fixStatus
+			this.fixSubmitTime=options.fixSubmitTime
+			this.fixTimeline=options.fixTimeline
+			this.fixType=options.fixType
+			this.fixUserAddress=options.fixUserAddress
+			this.fixUserDoor=options.fixUserDoor
+			this.fixUserId=options.fixUserId
+			this.fixUserName=options.fixUserName
+			this.fixUserPhone=options.fixUserPhone
+			this.fixWorkerId=options.fixWorkerId
+			this.fixWorkerName=options.fixWorkerName,
+			this.fixWorkerPhone=options.fixWorkerPhone
+		    console.log("fixUserId",this.fixUserId)
+			let fixOrderId = {fixOrderId: this.fixOrderId}
+			analysisTimeline(fixOrderId).then((res) => {
+				if(res.statusCode == "200")
+				{
+					this.timeLine = res.data
+					console.log("时间线",res.data);
+					uni.hideLoading();
+				}
+				else
+				{
+					console.log('获取失败')
+					uni.hideLoading();
+					uni.showToast({
+						title: '获取失败',
+						duration: 2000,
+						icon: 'error'
+					})
+				}
+			})
+			this.imgArr = this.dataList.fixPicture.split('#')
+		},
 		data() {
 			return {
-				imgArr:[
-					{
-						id:0,
-						url:"http://p1362.bvimg.com/10465/f055218fcab03c86.jpg"
-					},
-					{
-						id:1,
-						url:"http://p1362.bvimg.com/10465/f055218fcab03c86.jpg"
-					}
-				],
+				dataList: [],
+				timeLine: [],
+				imgArr:[],
 				titles:[
 						  {
 							id:0,
@@ -200,7 +240,29 @@
 						roomNo:"701",
 						Info:"寝室阳台关不上，厕所门掉了，灯时而闪，床塌了，地砖裂了，电风扇没风扇，空调坏了，墙皮没了"
 					}
-				]
+				],
+				fixDepartmentId: '',
+				fixDepartmentName: '',
+				fixDetails: '',
+				fixExpectTime: '',
+				fixId: '',
+				fixLaborCost: '',
+				fixMaterial: '',
+				fixMaterialCost: '',
+				fixOrderId: '',
+				fixPicture: '',
+				fixStatus: '',
+				fixSubmitTime: '',
+				fixTimeline: '',
+				fixType: '',
+				fixUserAddress: '',
+				fixUserDoor: '',
+				fixUserId: '',
+				fixUserName: '',
+				fixUserPhone: '',
+				fixWorkerId: '',
+				fixWorkerName: '',
+				fixWorkerPhone: ''
 			}
 		},
 		methods: {

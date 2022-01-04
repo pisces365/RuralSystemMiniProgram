@@ -1,24 +1,23 @@
 <template>
-	<view class="components-home">
-		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
-			<block slot="backText">返回</block>
-			<block slot="content">乡村医疗</block>
-		</cu-custom>
-		<view class="bgpicture">
-			<view class="title-header_other">
-				<view class="title-text">
-					/*医 疗 服 务*/
-				</view>
-			</view>
+	<view class="mybg">
+		<view class="components-home">
+			<cu-custom bgColor="bg-gradual-blue" :isBack="true">
+				<block slot="backText">返回</block>
+				<block slot="content">乡村医疗</block>
+			</cu-custom>
 			<view class='nav-list margin-top'>
-				<text class="font_transparency">占位</text>
-				<navigator open-type="navigate" hover-class='none' :url="item.url" :class="'nav-li bg-index' + (index+1)"
+				<navigator open-type="navigate" hover-class='none' :url="item.url" :class=""
 				 v-for="(item, index) in cure_indexList" :key="index">
-					<view class="nav-name">{{item.name}}</view>
+					<text class="mytitle">{{item.title}}</text>
+					<view class="item myicon">
+						<text class="myfont1">{{item.name}}\n</text>
+						<text class="myfont2">{{item.detail}}\n</text>
+						<image :src="`${item.icon}`" class="myicon-location" mode="widthFix"></image>
+					</view>
 				</navigator>
 			</view>
+			<view style="height: 200rpx;width: 1rpx;"></view>
 		</view>
-		<!-- <view style="height: 120rpx;width: 1rpx;"></view> -->
 	</view>
 </template>
 
@@ -32,25 +31,49 @@
 						title: '网上就诊',
 						name: '网上就诊',
 						color: '',
-						url: '/page_cure/cure_item/cure_inquiry'
+						url: '/page_cure/cure_item/cure_inquiry',
+						detail:'村民便捷的网上看病预约平台',
+						icon:'http://p1362.bvimg.com/10465/ffe19a08db41c6ee.png'
 					},
 					{
-						title: '预约取号',
-						name: '预约取号',
+						title: '医生回复',
+						name: '医生回复',
 						color: '',
-						url: '/page_cure/cure_item/cure_take_number'
+						url: '/page_cure/cure_item/cure_inquiry_check',
+						detail:'查看在线问诊的医生回复',
+						icon:'http://p1362.bvimg.com/10465/ffe19a08db41c6ee.png'
 					},
 					{
-						title: '拥挤程度',
-						name: '拥挤程度',
+						title: '预约挂号',
+						name: '预约挂号',
 						color: '',
-						url: '/page_cure/cure_item/cure_Crowdedness'
+						url: '/page_cure/cure_item/cure_take_number',
+						detail:'村民便捷的网上挂号',
+						icon:'http://p1362.bvimg.com/10465/a092f718ea92bfcf.png'
+					},
+					{
+						title: '查看挂号',
+						name: '查看挂号',
+						color: '',
+						url: '/page_cure/cure_item/cure_take_number_check',
+						detail:'村民查看网上预约挂号情况',
+						icon:'http://p1362.bvimg.com/10465/a092f718ea92bfcf.png'
 					},
 					{
 						title: '上门就诊',
 						name: '上门就诊',
 						color: '',
-						url: '/page_cure/cure_item/cure_visit'
+						url: '/page_cure/cure_item/cure_visit',
+						detail:'村民预约上门就诊服务',
+						icon:'http://p1362.bvimg.com/10465/e7bfdcc7011ea9fb.png'
+					},
+					{
+						title: '上门进度',
+						name: '上门进度',
+						color: '',
+						url: '/page_cure/cure_item/cure_visit_check',
+						detail:'村民查看预约上门就诊服务的进度',
+						icon:'http://p1362.bvimg.com/10465/e7bfdcc7011ea9fb.png'
 					}
 				]
 			}
@@ -65,24 +88,16 @@
 	.font_transparency{
 		color:transparent;
 	}
-	.bgpicture{
-		
-		width:100%;
-		height:100%;
-		
-		background-size:100% 100%;
-		background-repeat: repeat-y;
-		background-image: url(http://p1362.bvimg.com/10465/565dd61f784a1eae.jpg);
-	}
+
 	.bg-top-blue {
 		background-image: linear-gradient(135deg, #52B5FC, #746BFE);
 		color: #fff;
 	}
 
 	.nav-list {
-		display: flex;
+		display:block;
 		flex-wrap: wrap;
-		padding: 0px 0px 0px 0px;
+		padding: 0rpx 0rpx 0rpx 0upx;
 		justify-content: space-between;
 	}
 
@@ -129,7 +144,7 @@
 	}
 
 	.nav-name {
-		font-size: 50upx;
+		font-size: 20upx;
 		text-transform: Capitalize;
 		margin-top: 20upx;
 		position: relative;
@@ -240,7 +255,7 @@
 		justify-content: center;
 		/* padding: 40rpx 0 0 0; */
 		font-weight: bold;
-		background-image: url(http://p1362.bvimg.com/10465/565dd61f784a1eae.jpg);
+		background-image: url();
 		background-size: cover;
 	}
 	.title-header_other {
@@ -251,7 +266,7 @@
 		justify-content: center;
 		/* padding: 40rpx 0 0 0; */
 		font-weight: bold;
-		background-image: url(http://p1362.bvimg.com/10465/565dd61f784a1eae.jpg);
+		background-image: url();
 		background-size: cover;
 	}
 	.radius-index {
@@ -540,4 +555,53 @@
 		color: #fff;
 		background: #0396FF;
 	}
+	.myicon{
+		width: 300px;
+		height: 130px;
+		margin: 0 auto;
+		background-color: rgba(255,255,255,0.2);
+	}
+	
+	  .item {
+	    display: block;
+	    align-items: center;
+	    justify-content: center;
+	    border-radius: 10rpx;
+		color: white;
+	  }
+	  .mybg{
+		background: rgb(2,0,36);
+		background: linear-gradient(143deg, rgba(2,0,36,1) 0%, rgba(92,233,247,1) 0%, rgba(78,92,218,1) 100%);
+	  	background-size:100% 100%;
+	  }
+	 .myfont1{
+		position: relative;
+		color: #fffef9;
+		top: 50%;
+		left: 37%;
+		font-size: 40rpx;
+	 }
+	 .myfont2{
+		margin-top: 100px;
+		font-size: small;
+		color: #fffef9;
+		position: relative;
+		top: 60%;
+		left: 5%;
+		font-style: italic;
+		opacity: 0.7;
+	 }
+	 .mytitle{
+		 color: #fffef9;
+		 font-size: 50rpx;
+		 position: relative;
+		 left: 35%;
+		 font-weight: bold;
+	 }
+	 .myicon-location{
+		width: 50px;
+		height: 50px;
+		bottom: 27%;
+		left: 40%;
+	 }
 </style>

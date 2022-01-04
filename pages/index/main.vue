@@ -1,89 +1,35 @@
 <template>
 	<view class="components-home">
 		<view style="margin-top:-250rpx;height: 486rpx;">
-			<image src='https://s1.ax1x.com/2020/09/16/wccQQP.png' mode='widthFix' class='png' style='width:100%;height:100rpx'></image>
+			<image src='https://s1.ax1x.com/2020/09/16/wccQQP.png' mode='widthFix' class='png'
+				style='width:100%;height:100rpx'></image>
 		</view>
-		
+
 		<view class="title-header">
 			<view class="title-text">
 				民 生 服 务
 			</view>
 		</view>
-		
+
 		<view class='nav-list margin-top'>
 			<navigator open-type="navigate" hover-class='none' :url="item.url" :class="'nav-li bg-index' + (index+1)"
-			 v-for="(item, index) in live_services" :key="index">
+				v-for="(item, index) in live_services" :key="index">
 				<view class="nav-name">{{item.name}}</view>
 			</navigator>
 		</view>
 
 		<view class="title-header">
 			<view class="title-text">
-				村 务 监 督
+				村 务 党 建
 			</view>
 		</view>
 
 		<view class='nav-list margin-top'>
 			<navigator open-type="navigate" hover-class='none' :url="item.url" :class="'nav-li bg-kuxuan' + (index+1)"
-			 v-for="(item, index) in gov_affairs_supervise" :key="index">
+				v-for="(item, index) in gov_affairs_supervise" :key="index">
 				<view class="nav-name">{{item.name}}</view>
 			</navigator>
 		</view>
-
-		<view class="title-header">
-			<view class="title-text">
-				乡 村 休 闲
-			</view>
-		</view>
-
-		<view class='nav-list margin-top'>
-			<navigator open-type="navigate" hover-class='none' :url="item.url" :class="'nav-li bg-exper' + (index+1)"
-			 v-for="(item, index) in relaxation" :key="index">
-				<view class="nav-name">{{item.name}}</view>
-			</navigator>
-		</view>
-		
-		<!-- 以下为原始版本，供界面选择 -->
-		以下为原始版本，供界面选择
-		<view class="title-header">
-			<view class="title-text">
-				////
-			</view>
-		</view>
-		
-		<view class='nav-list margin-top'>
-			<navigator open-type="navigate" hover-class='none' :url="'../design?type=' + index" :class="'nav-li bg-index' + (index+1)"
-			 v-for="(item, index) in Template" :key="index">
-				<view class="nav-name">{{item.name}}</view>
-			</navigator>
-		</view>
-		
-		<view class="title-header">
-			<view class="title-text">
-				////
-			</view>
-		</view>
-		
-		<view class='nav-list margin-top'>
-			<navigator open-type="navigate" hover-class='none' :url="'/tn_components/' + item.title" :class="'nav-li bg-kuxuan' + (index+1)"
-			 v-for="(item, index) in kuxuan" :key="index">
-				<view class="nav-name">{{item.name}}</view>
-			</navigator>
-		</view>
-		
-		<view class="title-header">
-			<view class="title-text">
-				////
-			</view>
-		</view>
-		
-		<view class='nav-list margin-top'>
-			<navigator open-type="navigate" hover-class='none' :url="'/tn_components/' + item.title" :class="'nav-li bg-exper' + (index+1)"
-			 v-for="(item, index) in yangshi" :key="index">
-				<view class="nav-name">{{item.name}}</view>
-			</navigator>
-		</view>
-		
 		<view style="height: 120rpx;width: 1rpx;"></view>
 	</view>
 </template>
@@ -93,8 +39,7 @@
 		name: 'Components',
 		data() {
 			return {
-				live_services:[
-					{
+				live_services: [{
 						title: '交通服务',
 						name: '交通服务',
 						color: '',
@@ -113,46 +58,40 @@
 						url: '/page_repair/repair_index/repair_index'
 					},
 					{
-						title: '快递服务',
-						name: '快递服务',
+						title: '快递上门服务',
+						name: '快递上门服务',
 						color: '',
-						url: '/page_express/express_index/express_index'
+						url: '/page_express/express_door_to_door/express_door_to_door'
 					},
 					{
 						title: '租房服务',
 						name: '租房服务',
 						color: '',
-						url: ''
-					}],
-				gov_affairs_supervise:[
+						url: '/page_rent/rent_index/rent_index'
+					},
 					{
+						title: '乡村旅行食宿',
+						name: '乡村旅行食宿',
+						color: '',
+						url: '/page_travel/travel_index/travel_index'
+					}
+				],
+				gov_affairs_supervise: [{
 						title: '换届选举',
 						name: '换届选举',
 						color: '',
 						url: '/page_vote/vote_index/vote_index'
-					},
-					{
-						title: '村民举报',
-						name: '村民举报',
-						color: '',
-						url: ''
-					}],
-				relaxation:[
-					{
+					}
+				],
+				relaxation: [{
 						title: '乡村娱乐',
 						name: '乡村娱乐',
 						color: '',
 						url: ''
-					},
-					{
-						title: '乡村旅游',
-						name: '乡村旅游',
-						color: '',
-						url: ''
 					}
+					
 				],
-				Template:[
-					{
+				Template: [{
 						title: 'gamecube',
 						name: 'App设计',
 						color: ''
@@ -640,10 +579,12 @@
 		background-color: #FF4F94;
 		color: #fff;
 	}
+
 	.bg-exper2 {
 		background-color: #006FFF;
 		color: #fff;
 	}
+
 	.bg-exper3 {
 		background-color: #19D08B;
 		color: #fff;
@@ -694,18 +635,22 @@
 		background-color: #BC78EC;
 		color: #fff;
 	}
+
 	.bg-kuxuan7 {
 		background-color: #f39902;
 		color: #fff;
 	}
+
 	.bg-kuxuan8 {
 		color: #fff;
 		background: #19CF8A;
 	}
+
 	.bg-kuxuan9 {
 		color: #fff;
 		background: #8799a3;
 	}
+
 	.bg-kuxuan10 {
 		color: #fff;
 		background: #0396FF;

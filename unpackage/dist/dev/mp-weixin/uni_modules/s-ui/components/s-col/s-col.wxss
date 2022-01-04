@@ -1,0 +1,331 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 水平间距 */
+/* 水平间距 */
+/*
+ * @Description: s-ui 组件scss变量
+ * @Author: 无痕
+ * @Email: 350801869@qq.com
+ * @Date: 2021-11-25 13:39:57
+ * @LastEditTime: 2021-11-26 14:00:49
+ * @LastEditors: 无痕
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+/* 颜色变量 */
+/* 边框border */
+.s-col.data-v-11ff1610 {
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.s-col--1.data-v-11ff1610 {
+  flex-basis: 4.16667%;
+}
+.s-col--offset-1.data-v-11ff1610 {
+  margin-left: 4.16667%;
+}
+.s-col--vertical-offset-1.data-v-11ff1610 {
+  margin-top: 4.16667%;
+}
+.s-col--flex-1.data-v-11ff1610 {
+  flex-grow: 1;
+}
+.s-col--2.data-v-11ff1610 {
+  flex-basis: 8.33333%;
+}
+.s-col--offset-2.data-v-11ff1610 {
+  margin-left: 8.33333%;
+}
+.s-col--vertical-offset-2.data-v-11ff1610 {
+  margin-top: 8.33333%;
+}
+.s-col--flex-2.data-v-11ff1610 {
+  flex-grow: 2;
+}
+.s-col--3.data-v-11ff1610 {
+  flex-basis: 12.5%;
+}
+.s-col--offset-3.data-v-11ff1610 {
+  margin-left: 12.5%;
+}
+.s-col--vertical-offset-3.data-v-11ff1610 {
+  margin-top: 12.5%;
+}
+.s-col--flex-3.data-v-11ff1610 {
+  flex-grow: 3;
+}
+.s-col--4.data-v-11ff1610 {
+  flex-basis: 16.66667%;
+}
+.s-col--offset-4.data-v-11ff1610 {
+  margin-left: 16.66667%;
+}
+.s-col--vertical-offset-4.data-v-11ff1610 {
+  margin-top: 16.66667%;
+}
+.s-col--flex-4.data-v-11ff1610 {
+  flex-grow: 4;
+}
+.s-col--5.data-v-11ff1610 {
+  flex-basis: 20.83333%;
+}
+.s-col--offset-5.data-v-11ff1610 {
+  margin-left: 20.83333%;
+}
+.s-col--vertical-offset-5.data-v-11ff1610 {
+  margin-top: 20.83333%;
+}
+.s-col--flex-5.data-v-11ff1610 {
+  flex-grow: 5;
+}
+.s-col--6.data-v-11ff1610 {
+  flex-basis: 25%;
+}
+.s-col--offset-6.data-v-11ff1610 {
+  margin-left: 25%;
+}
+.s-col--vertical-offset-6.data-v-11ff1610 {
+  margin-top: 25%;
+}
+.s-col--flex-6.data-v-11ff1610 {
+  flex-grow: 6;
+}
+.s-col--7.data-v-11ff1610 {
+  flex-basis: 29.16667%;
+}
+.s-col--offset-7.data-v-11ff1610 {
+  margin-left: 29.16667%;
+}
+.s-col--vertical-offset-7.data-v-11ff1610 {
+  margin-top: 29.16667%;
+}
+.s-col--flex-7.data-v-11ff1610 {
+  flex-grow: 7;
+}
+.s-col--8.data-v-11ff1610 {
+  flex-basis: 33.33333%;
+}
+.s-col--offset-8.data-v-11ff1610 {
+  margin-left: 33.33333%;
+}
+.s-col--vertical-offset-8.data-v-11ff1610 {
+  margin-top: 33.33333%;
+}
+.s-col--flex-8.data-v-11ff1610 {
+  flex-grow: 8;
+}
+.s-col--9.data-v-11ff1610 {
+  flex-basis: 37.5%;
+}
+.s-col--offset-9.data-v-11ff1610 {
+  margin-left: 37.5%;
+}
+.s-col--vertical-offset-9.data-v-11ff1610 {
+  margin-top: 37.5%;
+}
+.s-col--flex-9.data-v-11ff1610 {
+  flex-grow: 9;
+}
+.s-col--10.data-v-11ff1610 {
+  flex-basis: 41.66667%;
+}
+.s-col--offset-10.data-v-11ff1610 {
+  margin-left: 41.66667%;
+}
+.s-col--vertical-offset-10.data-v-11ff1610 {
+  margin-top: 41.66667%;
+}
+.s-col--flex-10.data-v-11ff1610 {
+  flex-grow: 10;
+}
+.s-col--11.data-v-11ff1610 {
+  flex-basis: 45.83333%;
+}
+.s-col--offset-11.data-v-11ff1610 {
+  margin-left: 45.83333%;
+}
+.s-col--vertical-offset-11.data-v-11ff1610 {
+  margin-top: 45.83333%;
+}
+.s-col--flex-11.data-v-11ff1610 {
+  flex-grow: 11;
+}
+.s-col--12.data-v-11ff1610 {
+  flex-basis: 50%;
+}
+.s-col--offset-12.data-v-11ff1610 {
+  margin-left: 50%;
+}
+.s-col--vertical-offset-12.data-v-11ff1610 {
+  margin-top: 50%;
+}
+.s-col--flex-12.data-v-11ff1610 {
+  flex-grow: 12;
+}
+.s-col--13.data-v-11ff1610 {
+  flex-basis: 54.16667%;
+}
+.s-col--offset-13.data-v-11ff1610 {
+  margin-left: 54.16667%;
+}
+.s-col--vertical-offset-13.data-v-11ff1610 {
+  margin-top: 54.16667%;
+}
+.s-col--flex-13.data-v-11ff1610 {
+  flex-grow: 13;
+}
+.s-col--14.data-v-11ff1610 {
+  flex-basis: 58.33333%;
+}
+.s-col--offset-14.data-v-11ff1610 {
+  margin-left: 58.33333%;
+}
+.s-col--vertical-offset-14.data-v-11ff1610 {
+  margin-top: 58.33333%;
+}
+.s-col--flex-14.data-v-11ff1610 {
+  flex-grow: 14;
+}
+.s-col--15.data-v-11ff1610 {
+  flex-basis: 62.5%;
+}
+.s-col--offset-15.data-v-11ff1610 {
+  margin-left: 62.5%;
+}
+.s-col--vertical-offset-15.data-v-11ff1610 {
+  margin-top: 62.5%;
+}
+.s-col--flex-15.data-v-11ff1610 {
+  flex-grow: 15;
+}
+.s-col--16.data-v-11ff1610 {
+  flex-basis: 66.66667%;
+}
+.s-col--offset-16.data-v-11ff1610 {
+  margin-left: 66.66667%;
+}
+.s-col--vertical-offset-16.data-v-11ff1610 {
+  margin-top: 66.66667%;
+}
+.s-col--flex-16.data-v-11ff1610 {
+  flex-grow: 16;
+}
+.s-col--17.data-v-11ff1610 {
+  flex-basis: 70.83333%;
+}
+.s-col--offset-17.data-v-11ff1610 {
+  margin-left: 70.83333%;
+}
+.s-col--vertical-offset-17.data-v-11ff1610 {
+  margin-top: 70.83333%;
+}
+.s-col--flex-17.data-v-11ff1610 {
+  flex-grow: 17;
+}
+.s-col--18.data-v-11ff1610 {
+  flex-basis: 75%;
+}
+.s-col--offset-18.data-v-11ff1610 {
+  margin-left: 75%;
+}
+.s-col--vertical-offset-18.data-v-11ff1610 {
+  margin-top: 75%;
+}
+.s-col--flex-18.data-v-11ff1610 {
+  flex-grow: 18;
+}
+.s-col--19.data-v-11ff1610 {
+  flex-basis: 79.16667%;
+}
+.s-col--offset-19.data-v-11ff1610 {
+  margin-left: 79.16667%;
+}
+.s-col--vertical-offset-19.data-v-11ff1610 {
+  margin-top: 79.16667%;
+}
+.s-col--flex-19.data-v-11ff1610 {
+  flex-grow: 19;
+}
+.s-col--20.data-v-11ff1610 {
+  flex-basis: 83.33333%;
+}
+.s-col--offset-20.data-v-11ff1610 {
+  margin-left: 83.33333%;
+}
+.s-col--vertical-offset-20.data-v-11ff1610 {
+  margin-top: 83.33333%;
+}
+.s-col--flex-20.data-v-11ff1610 {
+  flex-grow: 20;
+}
+.s-col--21.data-v-11ff1610 {
+  flex-basis: 87.5%;
+}
+.s-col--offset-21.data-v-11ff1610 {
+  margin-left: 87.5%;
+}
+.s-col--vertical-offset-21.data-v-11ff1610 {
+  margin-top: 87.5%;
+}
+.s-col--flex-21.data-v-11ff1610 {
+  flex-grow: 21;
+}
+.s-col--22.data-v-11ff1610 {
+  flex-basis: 91.66667%;
+}
+.s-col--offset-22.data-v-11ff1610 {
+  margin-left: 91.66667%;
+}
+.s-col--vertical-offset-22.data-v-11ff1610 {
+  margin-top: 91.66667%;
+}
+.s-col--flex-22.data-v-11ff1610 {
+  flex-grow: 22;
+}
+.s-col--23.data-v-11ff1610 {
+  flex-basis: 95.83333%;
+}
+.s-col--offset-23.data-v-11ff1610 {
+  margin-left: 95.83333%;
+}
+.s-col--vertical-offset-23.data-v-11ff1610 {
+  margin-top: 95.83333%;
+}
+.s-col--flex-23.data-v-11ff1610 {
+  flex-grow: 23;
+}
+.s-col--24.data-v-11ff1610 {
+  flex-basis: 100%;
+}
+.s-col--offset-24.data-v-11ff1610 {
+  margin-left: 100%;
+}
+.s-col--vertical-offset-24.data-v-11ff1610 {
+  margin-top: 100%;
+}
+.s-col--flex-24.data-v-11ff1610 {
+  flex-grow: 24;
+}
+

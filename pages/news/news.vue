@@ -2,58 +2,16 @@
 <template>
 	<view class="container">
 		<view style="background-color: #FFFFFF;padding: 30rpx 30rpx 30rpx 30rpx;">
-			<view class="titleBox text-xl text-black text-bold">{{getData.title}}</view>
-			<view class="timeBox text-df text-gray margin-top-sm margin-bottom-sm">{{getData.createTime}}</view>
-			<image mode="widthFix" :src="getData.url"></image>
+			<view class="titleBox text-xl text-black text-bold">{{title}}</view>
+			<view class="timeBox text-df text-gray margin-top-sm margin-bottom-sm">{{time}}</view>
+			<image mode="widthFix" :src="img"></image>
 
 			<!-- 中间文章区域 -->
 			<view class="contentBox text-lg text-black margin-top-sm">
-				<view v-html="getData.content"></view>
+				<view v-html="message"></view>
 			</view>
 		</view>
 		
-		<view v-if="getData.evaluateList" style="background-color: #FFFFFF;padding: 0rpx 30rpx 15rpx0rpx;margin: 25rpx 0 170rpx 0;">
-			<view class="cu-bar justify-left bg-white">
-				<view class="action border-title">
-					<text class="text-lg text-bold text-blue">评论</text>
-					<text class="bg-gradual-blue" style="width:3rem"></text>
-				</view>
-			</view>
-
-			<view v-if="getData.evaluateList.length < 1" class="text-lg text-bold text-center margin-bottom-lg">暂无评论</view>
-
-			<view v-if="getData.evaluateList.length > 0" class="cu-list menu-avatar comment solids-top">
-				<view class="cu-item" v-for="(item,index) in getData.evaluateList">
-					<view class="cu-avatar round" style="background-image:url(http://1.85.32.5:49000/daxiang/common/20200918181604.png);"></view>
-					<view class="content">
-						<view class="text-grey">{{item.userName}}</view>
-						<view class="text-gray text-content text-df">
-							{{item.describ}}
-						</view>
-						<view class="margin-top-sm flex justify-between">
-							<view class="text-gray text-df">{{item.createTime}}</view>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-
-		<!-- 底部评论 -->
-		<view class="bottomBox solids-top">
-			<view class="cu-bar input">
-				<input v-model="comment_input" @confirm="send_btn" confirm-type="send" class="solid" maxlength="300" cursor-spacing="10" placeholder="说说你的看法.."></input>
-				<!-- <view class="action">
-					<button style="background: transparent;" open-type="share" hover-class='none'>
-						<text class="cuIcon-share text-grey"></text>
-					</button>
-				</view> -->
-				<view class="action">
-					<view class="cuIcon-appreciatefill text-grey" @click="praiseClick">
-						<view class="cu-tag badge" style="top: 6rpx; right: 28rpx;">{{getData.praise || 0}}</view>
-					</view>
-				</view>
-			</view>
-		</view>
 		<view class="safe-area-inset-bottom"></view>
 	</view>
 </template>
@@ -62,6 +20,12 @@
 	export default {
 		data() {
 			return {
+				informationid: '',
+				message: '',
+				title: '',
+				time: '',
+				authorName: '',
+				img: '',
 				scrollTop: 0,
 				old: {
 					scrollTop: 0
@@ -76,6 +40,12 @@
 		},
 		onLoad(option) {
 			this.detailsId = option.detailsId;
+			this.informationid = option.informationid;
+			this.message = option.message;
+			this.title = option.title;
+			this.time = option.time;
+			this.authorName = option.authorName;
+			this.img = option.img;
 			this.getDataFun();
 		},
 		methods: {

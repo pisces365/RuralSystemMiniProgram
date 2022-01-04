@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<u-notice-bar mode="horizontal" type="primary" :list="list"></u-notice-bar>
+		<!-- <u-notice-bar mode="horizontal" type="primary" :list="list"></u-notice-bar> -->
 
 		<view class="cu-bar bg-white margin-top-xs">
 			<view class="action sub-title">
@@ -88,7 +88,7 @@
 
 <script>
 	// 图表
-	import uCharts from "@/components/u-charts/u-charts.js";
+	// import uCharts from "@/components/u-charts/u-charts.js";
 	var _self;
 	var canvaRing = null;
 	var canvaArea = null;

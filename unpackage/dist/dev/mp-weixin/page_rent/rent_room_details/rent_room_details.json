@@ -1,0 +1,16 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "s-swiper": "/uni_modules/s-ui/components/s-swiper/s-swiper",
+    "fui-card": "/node-modules/firstui-uni/firstui/fui-card/fui-card",
+    "s-grid": "/uni_modules/s-ui/components/s-grid/s-grid",
+    "s-grid-item": "/uni_modules/s-ui/components/s-grid-item/s-grid-item",
+    "s-row": "/uni_modules/s-ui/components/s-row/s-row",
+    "s-col": "/uni_modules/s-ui/components/s-col/s-col",
+    "s-image": "/uni_modules/s-ui/components/s-image/s-image",
+    "s-button": "/uni_modules/s-ui/components/s-button/s-button",
+    "s-fixed": "/uni_modules/s-ui/components/s-fixed/s-fixed",
+    "s-popup": "/uni_modules/s-ui/components/s-popup/s-popup",
+    "s-date-time-picker": "/uni_modules/s-ui/components/s-date-time-picker/s-date-time-picker"
+  }
+}

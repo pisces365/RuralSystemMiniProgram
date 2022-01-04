@@ -1,7 +1,6 @@
 <!-- 个人中心 -->
 <template>
 	<view class="components-theme">
-		
 		<!-- 弹窗确认 -->
 		<view class="cu-modal" :class="modalName=='Modal'?'show':''">
 			<view class="cu-dialog">
@@ -28,16 +27,12 @@
 
 			<block>
 				<view class='text-center'>
-					<!-- <view class="cu-avatar2 round margin-right-sm shadow-blur bg-img" style="background-image:url(http://cdn.zhoukaiwen.com/head1.jpg);">
-					</view> -->
-
 					<view class="cu-avatar2 round xl margin-right-sm shadow-blur-lg bg-img open-data" style="overflow: hidden;">
 						<open-data type="userAvatarUrl"></open-data>
 					</view>
 					<view class="padding text-blue text-xl text-bold">
 						你好，<open-data type="userNickName"></open-data>
 					</view>
-
 				</view>
 			</block>
 
@@ -46,25 +41,6 @@
 		</view>
 
 		<block>
-			<!-- <view class='padding flex text-center text-grey bg-white shadow-warp-my'>
-				<view class='flex flex-sub flex-direction solid-right'>
-					<view class="text-xxl text-orange">829</view>
-					<view class="margin-top-sm">
-						<text class='cuIcon-hot'></text> 访客</view>
-				</view>
-				<view class='flex flex-sub flex-direction solid-right'>
-					<view class="text-xxl text-blue">86</view>
-					<view class="margin-top-sm">
-						<text class='cuIcon-share'></text> 分享</view>
-				</view>
-				<view class='flex flex-sub flex-direction'>
-					<view class="text-xxl text-red">142</view>
-					<view class="margin-top-sm">
-						<text class='cuIcon-like'></text> 点赞</view>
-				</view>
-			</view> -->
-
-
 			<view class="cu-list menu card-menu margin-top-lg margin-bottom-sm shadow-shop bg-white text-black my-radius sm-border">
 				<view class="cu-item" @tap="showModal" data-target="Modal">
 					<view class='content'>
@@ -82,59 +58,16 @@
 						</view>
 					</view>
 				</view>
-
-				<!-- <view class="cu-item " @click="mentalTest">
-					<button class='content cu-btn'>
-						<image src='http://p1362.bvimg.com/10465/615d2b284956653c.png' class='png' mode='aspectFit'></image>
-						<text class='text-lg margin-sm'>答题测试</text>
-					</button>
-					<view class="action">
-						<view class="cu-tag round bg-orange light">技术</view>
-						<view class="cu-tag round bg-olive light">性格</view>
-						<view class="cu-tag round bg-blue light">星座</view>
-					</view>
-				</view> -->
-
-				<!-- 听歌 -->
-				<!-- <view class="cu-item " bindtap="">
-					<button class='content cu-btn'>
-						<image src='' class='png' mode='aspectFit'></image>
-						<text class='text-lg margin-sm'>休闲小游戏</text>
-					</button>
-					<view class="action">
-						<view class="cu-avatar-group">
-							<view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
-							<view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);"></view>
-							<view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);"></view>
-							<view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);"></view>
-						</view>
-						<text class="text-grey text-sm">共4款</text>
-					</view>
-				</view> -->
-
+				
 				<view class="cu-item">
 					<button class='content cu-btn' open-type="share">
 						<image src='http://p1362.bvimg.com/10465/875e63eaef8ea669.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>分享小程序</text>
 					</button>
 				</view>
-
 			</view>
 
 			<view class="cu-list menu card-menu margin-top-lg margin-bottom-lg shadow-shop bg-white text-black my-radius sm-border">
-
-				<!-- <view class="cu-item ">
-					<button class='content cu-btn' @click="goSalary">
-						<image src='http://p1362.bvimg.com/10465/b658cd9b8cc1ef00.png' class='png' mode='aspectFit'></image>
-						<text class='text-lg margin-sm'>薪资排名</text>
-					</button>
-				</view>
-				<view class="cu-item " @click="goCourse">
-					<button class='content cu-btn'>
-						<image src='' class='png' mode='aspectFit'></image>
-						<text class='text-lg margin-sm'>课班信息</text>
-					</button>
-				</view> -->
 
 				<view class="cu-item ">
 					<button class='content cu-btn' open-type="contact">
@@ -166,7 +99,6 @@
 					</button>
 				</view>
 			</view>
-
 		</block>
 
 		<view style="height: 110rpx;width: 1rpx;"></view>
@@ -178,8 +110,6 @@
 	export default {
 		data() {
 			return {
-				// Custom: this.Custom,
-				// CustomBar: this.CustomBar,
 				spaceShow:true,
 				modalName: null,
 				picName: '流星之夜',
@@ -247,11 +177,7 @@
 			}
 		},
 		mounted() {
-			// uni.showToast({
-			//     title: '暂未开放,敬请期待',
-			// 	icon: 'none',
-			//     duration: 2000
-			// });
+
 		},
 		methods: {
 			switchImage(index, name) {
@@ -301,7 +227,6 @@
 	.UCenter-bg {
 		background: #fff;
 		background-size: 100% 100%;
-		/* background-size: cover; */
 		height: 550rpx;
 		display: flex;
 		justify-content: center;
@@ -333,7 +258,6 @@
 		mix-blend-mode: screen;
 		height: 100rpx;
 	}
-
 
 	// 头像
 	.cu-avatar2 {
@@ -426,7 +350,6 @@
 		border: none
 	}
 
-
 	/* 数字背景 */
 	.shadow-warp-my {
 		position: relative;
@@ -452,7 +375,6 @@
 		transform: rotate(6deg);
 	}
 
-
 	.bg-product {
 		background-image: linear-gradient(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0));
 		color: #fff;
@@ -462,8 +384,6 @@
 		margin-bottom: 150rpx;
 	}
 
-
-	// 
 	.cu-dialog {
 		background: #FFFFFF;
 		overflow: visible;

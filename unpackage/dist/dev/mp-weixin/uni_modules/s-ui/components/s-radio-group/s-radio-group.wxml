@@ -1,0 +1,1 @@
+<view class="{{['s-radio-group',custom_class]}}" style="{{(custom_style)}}"><slot></slot></view>

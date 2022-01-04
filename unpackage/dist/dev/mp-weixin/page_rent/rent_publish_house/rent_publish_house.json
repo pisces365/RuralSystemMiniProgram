@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "fui-card": "/node-modules/firstui-uni/firstui/fui-card/fui-card",
+    "s-row": "/uni_modules/s-ui/components/s-row/s-row",
+    "s-col": "/uni_modules/s-ui/components/s-col/s-col",
+    "s-radio-group": "/uni_modules/s-ui/components/s-radio-group/s-radio-group",
+    "s-radio": "/uni_modules/s-ui/components/s-radio/s-radio",
+    "s-fixed": "/uni_modules/s-ui/components/s-fixed/s-fixed",
+    "s-button": "/uni_modules/s-ui/components/s-button/s-button"
+  }
+}

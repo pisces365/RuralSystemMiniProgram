@@ -1,0 +1,1 @@
+<view class="{{['s-row','data-v-e8cebd78',c_class]}}" style="{{(c_style)}}"><view class="{{['s-row__wrap','data-v-e8cebd78',wrap_class]}}" style="{{(wrap_style)}}"><slot></slot></view></view>
