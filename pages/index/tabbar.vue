@@ -10,16 +10,16 @@
 			<view class="cu-bar tabbar bg-white shadow foot">
 				<view class="action" @click="NavChange" data-cur="index">
 					<view class='cuIcon-cu-image'>
-						<image v-if="PageCur=='index'" src="http://p1362.bvimg.com/10465/ce800c4769ef81a9.png"></image>
-						<image v-if="PageCur != 'index'" src="http://p1362.bvimg.com/10465/ec2758af980bb0b5.png"></image>
+						<image v-if="PageCur=='index'" src="https://s4.ax1x.com/2022/01/10/7EVIeA.png"></image>
+						<image v-if="PageCur != 'index'" src="https://s4.ax1x.com/2022/01/10/7EV4Ld.png"></image>
 					</view>
 					<view :class="PageCur=='index'?'color_main':'text-gray'">首页</view>
 				</view>
 
 				<view class="action" @click="NavChange" data-cur="cases">
 					<view class='cuIcon-cu-image'>
-						<image v-if="PageCur=='cases'" src="http://p1362.bvimg.com/10465/9adddd44c71242f1.png"></image>
-						<image v-if="PageCur != 'cases'" src="http://p1362.bvimg.com/10465/09e4ddd38ecf9001.png"></image>
+						<image v-if="PageCur=='cases'" src="https://s4.ax1x.com/2022/01/10/7EVbJf.png"></image>
+						<image v-if="PageCur != 'cases'" src="https://s4.ax1x.com/2022/01/10/7EVHFP.png"></image>
 					</view>
 					<view :class="PageCur=='search'?'color_main':'text-gray'">乡村中心</view>
 				</view>
@@ -32,8 +32,8 @@
 				<view class="action" @click="NavChange" data-cur="news">
 					<view class='cuIcon-cu-image'>
 						<!-- <view class="cu-tag badge">{{message}}</view> -->
-						<image v-if="PageCur=='news'" src="http://p1362.bvimg.com/10465/17a643f87311641f.png"></image>
-						<image v-if="PageCur != 'news'" src="http://p1362.bvimg.com/10465/adbbb92ea175e2e2.png"></image>
+						<image v-if="PageCur=='news'" src="https://s4.ax1x.com/2022/01/10/7EVTot.png"></image>
+						<image v-if="PageCur != 'news'" src="https://s4.ax1x.com/2022/01/10/7EVfQe.png"></image>
 					</view>
 					<view :class="PageCur=='news'?'color_main':'text-gray'">政策资讯</view>
 				</view>
@@ -41,8 +41,8 @@
 				<view class="action" @click="NavChange" data-cur="me">
 					<view class='cuIcon-cu-image'>
 						<!-- <view class="cu-tag badge"></view> --><!-- 红点 -->
-						<image v-if="PageCur=='me'" src="http://p1362.bvimg.com/10465/6b2663e4762dc54a.png"></image>
-						<image v-if="PageCur != 'me'" src="http://p1362.bvimg.com/10465/310af79eea9a485d.png"></image>
+						<image v-if="PageCur=='me'" src="https://s4.ax1x.com/2022/01/10/7EVhsH.png"></image>
+						<image v-if="PageCur != 'me'" src="https://s4.ax1x.com/2022/01/10/7EVodI.png"></image>
 					</view>
 					<view :class="PageCur=='me'?'color_main':'text-gray'">个人中心</view>
 				</view>

@@ -44,7 +44,7 @@
 			<view class="cu-list menu card-menu margin-top-lg margin-bottom-sm shadow-shop bg-white text-black my-radius sm-border">
 				<view class="cu-item" @tap="showModal" data-target="Modal">
 					<view class='content'>
-						<image src='http://p1362.bvimg.com/10465/788c9d354a4d4b62.png' class='png' mode='aspectFit'></image>
+						<image src='https://s4.ax1x.com/2022/01/10/7EucvT.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>主题切换</text>
 					</view>
 					<view class='action'>
@@ -61,7 +61,7 @@
 				
 				<view class="cu-item">
 					<button class='content cu-btn' open-type="share">
-						<image src='http://p1362.bvimg.com/10465/875e63eaef8ea669.png' class='png' mode='aspectFit'></image>
+						<image src='https://s4.ax1x.com/2022/01/10/7EuaDg.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>分享小程序</text>
 					</button>
 				</view>
@@ -71,14 +71,14 @@
 
 				<view class="cu-item ">
 					<button class='content cu-btn' open-type="contact">
-						<image src='http://p1362.bvimg.com/10465/e8fdea3a41d7ec43.png' class='png' mode='aspectFit'></image>
+						<image src='https://s4.ax1x.com/2022/01/10/7EuBUs.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>在线客服</text>
 					</button>
 				</view>
 
 				<view class="cu-item" @click="callPhoneNumber" data-number="18629591093">
 					<view class='content'>
-						<image src='http://p1362.bvimg.com/10465/e58a30497b249d1f.png' class='png' mode='aspectFit'></image>
+						<image src='https://s4.ax1x.com/2022/01/10/7Eu1UA.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>技术支持</text>
 					</view>
 					<view class="action">
@@ -88,13 +88,13 @@
 
 				<view class="cu-item">
 					<button class='content cu-btn' open-type="feedback">
-						<image src='http://p1362.bvimg.com/10465/42918ade3c4a8614.png' class='png' mode='aspectFit'></image>
+						<image src='https://s4.ax1x.com/2022/01/10/7EuYgf.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>问题反馈</text>
 					</button>
 				</view>
 				<view class="cu-item">
 					<button class='content cu-btn' @click="goAboutMe">
-						<image src='http://p1362.bvimg.com/10465/6d8ac9890ab147fd.png' class='png' mode='aspectFit'></image>
+						<image src='https://s4.ax1x.com/2022/01/10/7EuMHH.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>关于乡里办</text>
 					</button>
 				</view>

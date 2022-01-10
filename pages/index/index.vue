@@ -121,13 +121,13 @@
 				},
 
 				bannerList: [{
-						imageUrl: 'http://p1362.bvimg.com/10465/ebe9ee53eacd9d82.png',
+						imageUrl: 'https://pic.imgdb.cn/item/61dbc6542ab3f51d9185da5c.png',
 					},
 					{
-						imageUrl: 'http://p1362.bvimg.com/10465/df28479dd7b9666a.png',
+						imageUrl: 'https://pic.imgdb.cn/item/61dbc6542ab3f51d9185da65.png',
 					},
 					{
-						imageUrl: 'http://p1362.bvimg.com/10465/c8c87017129ce8b6.png',
+						imageUrl: 'https://pic.imgdb.cn/item/61dbc6542ab3f51d9185da72.png',
 					}
 				],
 				categories: [{
