@@ -2,14 +2,14 @@
 	<view>
 		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
 			<block slot="backText">返回</block>
-			<block slot="content">我要租房</block>
+			<block slot="content">我要租房</block> 
 		</cu-custom> 
 		<s-search v-model="keyword" show-action @search="handleSearch" @action="handleSearch" />
 		<s-row justify="center" style="display: flex;">
 			<s-col style="flex:1"> 
-				<view class="box">
+				<view class="box"> 
 					<s-button style="width: 100%;" @click="pricePickerVisible = true">
-						{{ priceText }} 
+						{{ priceText }}  
 						<text class="iconfont after">
 
 						</text>
@@ -133,7 +133,7 @@
 				pricePickerVisible: false,
 
 
-				roomTypeColumns: [
+				roomTypeColumns: [ 
 					['整租', '合租'],
 					['一室', '二室', '三室', '四室及以上'],
 				],

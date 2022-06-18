@@ -2,9 +2,9 @@
 <template>
 	<view class="container">
 		<view class="MainBox">
-			<video :src="getData[0].courseLink" autoplay="false">
+			<!-- <video :src="getData[0].courseLink" autoplay="false">
 				
-			</video>
+			</video> -->
 			<view class="cssBox" style="position: relative;">
 
 				<view class="leftBox">

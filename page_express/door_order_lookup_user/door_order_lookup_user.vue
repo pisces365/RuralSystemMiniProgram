@@ -8,7 +8,7 @@
 		<view class="fui-page__bd">
 		</view>
 
-		<fui-card src="http://p1362.bvimg.com/10465/e54a26087ddfd7d5.png" full title="配送员位置" tag="地图">
+		<fui-card src="https://s4.ax1x.com/2022/01/10/7EB5on.png" full title="配送员位置" tag="地图">
 			<view class="page-body">
 				<map class="map" id="myMap" ref="myMap" style="width:100%;height:400rpx" @markertap="markertap"
 					:latitude="latitude" :longitude="longitude" :markers="covers" :scale="scale"
@@ -20,10 +20,6 @@
 					<image :src="e_zhongxin" mode=""></image>
 					<view>刷新</view>
 				</view>
-				<!-- <view class="operation-item" @click="getLocation">
-					<image :src="e_zhongxin" mode=""></image>
-					<view>中心</view>
-				</view> -->
 				<view class="operation-item" @click="traffic">
 					<image :src="e_lukuang" mode=""></image>
 					<view>路况</view>
@@ -34,7 +30,7 @@
 		<view class="fui-page__bd">
 		</view>
 
-		<fui-card src="http://p1362.bvimg.com/10465/e54a26087ddfd7d5.png" full title="订单状态" tag=" ">
+		<fui-card src="https://s4.ax1x.com/2022/01/10/7EB5on.png" full title="订单状态" tag=" ">
 			<view class="fui-card__content" style="padding: 16rpx 40rpx;">
 				<view class="">
 					<text>
@@ -90,7 +86,7 @@
 		<view class="fui-page__bd">
 		</view>
 
-		<fui-card src="http://p1362.bvimg.com/10465/e54a26087ddfd7d5.png" full title="预计送达时间" tag=" ">
+		<fui-card src="https://s4.ax1x.com/2022/01/10/7EB5on.png" full title="预计送达时间" tag=" ">
 			<view class="fui-card__content" style="padding: 16rpx 40rpx;">
 				<view class="">
 					<text>
@@ -116,7 +112,7 @@
 		<view class="fui-page__bd">
 		</view>
 
-		<fui-card src="http://p1362.bvimg.com/10465/e54a26087ddfd7d5.png" full title="配送员信息" tag=" ">
+		<fui-card src="https://s4.ax1x.com/2022/01/10/7EB5on.png" full title="配送员信息" tag=" ">
 			<view class="fui-card__content" style="padding: 16rpx 40rpx;">
 				<view class="">
 					<text>
@@ -149,7 +145,7 @@
 
 					<view class="item">
 						<view class="left">
-							<image src="http://p1362.bvimg.com/10465/1b763af7e4a3d120.png" mode="aspectFill"></image>
+							<image src="https://s4.ax1x.com/2022/01/10/7EUUfS.png" mode="aspectFill"></image>
 						</view>
 						<view class="content">
 							<view class="top">

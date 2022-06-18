@@ -33,7 +33,7 @@
 							<view class="order" v-for="(item, index) in dataList1" :key="index">
 								<view class="item">
 									<view class="left">
-										<image src="http://p1362.bvimg.com/10465/c78576fc62cf26dd.jpg"
+										<image src="https://s4.ax1x.com/2022/01/10/7EUdSg.png"
 											mode="aspectFill"></image>
 									</view>
 									<view class="content">
@@ -66,7 +66,7 @@
 							<view class="order" v-for="(item, index) in dataList2" :key="index">
 								<view class="item">
 									<view class="left">
-										<image src="http://p1362.bvimg.com/10465/d3b46a65ed097ea3.png"
+										<image src="https://s4.ax1x.com/2022/01/10/7EaWUP.jpg"
 											mode="aspectFill"></image>
 									</view>
 									<view class="content">

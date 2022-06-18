@@ -33,7 +33,7 @@
 
 								<view class="item">
 									<view class="left">
-										<image src="http://p1362.bvimg.com/10465/1b763af7e4a3d120.png"
+										<image src="https://s4.ax1x.com/2022/01/10/7EUUfS.png"
 											mode="aspectFill"></image>
 									</view>
 									<view class="content">
@@ -85,7 +85,7 @@
 
 								<view class="item">
 									<view class="left">
-										<image src="http://p1362.bvimg.com/10465/1b763af7e4a3d120.png"
+										<image src="https://s4.ax1x.com/2022/01/10/7EUUfS.png"
 											mode="aspectFill"></image>
 									</view>
 									<view class="content">
@@ -136,7 +136,7 @@
 
 								<view class="item">
 									<view class="left">
-										<image src="http://p1362.bvimg.com/10465/1b763af7e4a3d120.png"
+										<image src="https://s4.ax1x.com/2022/01/10/7EUUfS.png"
 											mode="aspectFill"></image>
 									</view>
 									<view class="content">
